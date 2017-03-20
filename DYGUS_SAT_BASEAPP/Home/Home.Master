@@ -1,0 +1,465 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="DYGUS_SAT_BASEAPP.Home.Home" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Dygus :: Support & AfterSales</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="author" content="NHDTech" />
+    <meta name="description" content="Dygus :: SAT - Support & Techinal Assistance" />
+    <meta name="keywords" content="dygus, assistência técnica, telecomunicações" />
+    <meta name="application-name" content="Dygus :: SAT" />
+    <!-- Headings -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css' />
+    <!-- Text -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]> <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" /> <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" /> <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css" /> <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" /> <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" /> <![endif]-->
+    <!-- Core stylesheets do not remove -->
+    <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="../css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="../css/icons.css" rel="stylesheet" />
+    <!-- Plugins stylesheets -->
+    <link href="../js/plugins/misc/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="../js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" />
+    <link href="../js/plugins/ui/jgrowl/jquery.jgrowl.css" rel="stylesheet" />
+    <!-- app stylesheets -->
+    <link href="../css/app.css" rel="stylesheet" />
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="../css/custom.css" rel="stylesheet" />
+    <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]> <script src="js/html5shiv.js"></script> <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="../images/ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="../images/ico/favicon.png" />
+    <!-- Le javascript ================================================== -->
+    <!-- Important plugins put in all pages -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="../js/conditionizr.min.js"></script>
+    <script src="../js/bootstrap/bootstrap.js"></script>
+    <script src="../js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="../js/plugins/core/jrespond/jRespond.min.js"></script>
+    <script src="../js/jquery.genyxAdmin.js"></script>
+
+    <!-- Form plugins -->
+    <script src="../js/plugins/forms/uniform/jquery.uniform.min.js"></script>
+    <!-- Misc plugins -->
+    <script src="../js/plugins/misc/fullcalendar/fullcalendar.min.js"></script>
+    <!-- UI plugins -->
+    <script src="../js/plugins/ui/jgrowl/jquery.jgrowl.min.js"></script>
+    <!-- Init plugins -->
+    <script src="../js/app.js"></script>
+    <!-- Core js functions -->
+    <script src="../js/pages/dashboard.js"></script>
+    <!-- Init plugins only for page -->
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="fixed-top">
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>
+
+        <header id="header" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="Default.aspx">
+                        <img src="../images/logo.png" alt="Dygus :: SAT" /></a>
+                    <div class="nav-no-collapse">
+                        <ul class="nav pull-right">
+                            <li class="divider-vertical"></li>
+                            <li class="dropdown user"><a href="#" class="dropdown-toggle avatar" data-toggle="dropdown">
+                                <img src="../images/avatars/anonime.jpg" alt="sugge" />
+                                <span class="more"><i class="icon16 i-arrow-down-2"></i></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="PerfilUtilizador.aspx" class=""><i class="icon16 i-cogs"></i>Definições</a></li>
+                                    <li>
+                                        <asp:LoginStatus runat="server" ID="lgStatus" OnLoggingOut="lgStatus_LoggingOut" />
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="divider-vertical"></li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </header>
+        <!-- End #header -->
+        <div class="main">
+            <aside id="sidebar">
+                <div class="side-options">
+                    <ul>
+                        <li><a href="#" id="collapse-nav" class="act act-primary tip" title="Esconder Menu"><i class="icon16 i-arrow-left-7"></i></a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-wrapper">
+                    <nav id="mainnav">
+                        <ul class="nav nav-list">
+                            <li><a href="Default.aspx"><span class="icon"><i class="icon20 i-screen"></i></span><span class="txt">Painel de Controlo</span> </a></li>
+                            <li id="menuloja" runat="server"><a href="#"><span class="icon"><i class="icon20 i-menu-6"></i></span><span class="txt">Lojas</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirLoja.aspx"><span class="icon"><i class="icon20 i-stack-list"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarLoja.aspx"><span class="icon"><i class="icon20 i-stack-checkmark"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="EliminarLoja.aspx"><span class="icon"><i class="icon20 i-stack-star"></i></span><span class="txt">Eliminar</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menuarmazem" runat="server"><a href="#"><span class="icon"><i class="icon20 i-table-2"></i></span><span class="txt">Armazéns</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirArmazem.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarArmazem.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="EliminarArmazem.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Eliminar</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menuartigos" runat="server"><a href="#"><span class="icon"><i class="icon20 i-table-2"></i></span><span class="txt">Artigos</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirStocks.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarStocks.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="EliminarStocks.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Eliminar</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menuor" runat="server"><a href="#"><span class="icon"><i class="icon20 i-table-2"></i></span><span class="txt">Ordens Reparação</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirOrdemReparacao.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarTecnicoOrdemReparacao.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Atribuir</span> </a></li>
+                                    <li><a href="ListarOrdemReparacao.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="FecharOrdemReparacao.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Fechar</span> </a></li>
+                                    <li><a href="ListagemGeralOrdensReparacao.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Listar Abertas</span> </a></li>
+                                    <li><a href="ListagemORFechadas.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Listar Fechadas</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menuorc" runat="server"><a href="#"><span class="icon"><i class="icon20 i-table-2"></i></span><span class="txt">Orçamentos</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirOrcamentoCliente.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarOrcamentoCliente.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="FecharOrcamentoCliente.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Fechar</span> </a></li>
+                                    <li><a href="ListagemGeralOrcamentoCliente.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Listar Abertos</span> </a></li>
+                                    <li><a href="ListagemOrcamentoClienteFechados.aspx"><span class="icon"><i class="icon20 i-table"></i></span><span class="txt">Listar Fechados</span> </a></li>
+
+                                </ul>
+                            </li>
+
+                            <li id="menueqs" runat="server"><a href="#"><span class="icon"><i class="icon20 i-grid-5"></i></span><span class="txt">Eq. Substituição</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirEquipamentoSubstituicao.aspx"><span class="icon"><i class="icon20 i-IcoMoon"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarEquipamentoSubstituicao.aspx"><span class="icon"><i class="icon20 i-point-up"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="EliminarEquipamentoSubstituicao.aspx"><span class="icon"><i class="icon20 i-puzzle"></i></span><span class="txt">Eliminar</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menucondicoes" runat="server"><a href="#"><span class="icon"><i class="icon20 i-grid-5"></i></span><span class="txt">Condições Gerais</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirCondicaoGeral.aspx"><span class="icon"><i class="icon20 i-IcoMoon"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarCondicaoGeral.aspx"><span class="icon"><i class="icon20 i-point-up"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="EliminarCondicaoGeral.aspx"><span class="icon"><i class="icon20 i-puzzle"></i></span><span class="txt">Eliminar</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menuclientes" runat="server"><a href="#"><span class="icon"><i class="icon20 i-cogs"></i></span><span class="txt">Clientes</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirCliente.aspx"><span class="icon"><i class="icon20 i-IcoMoon"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarCliente.aspx"><span class="icon"><i class="icon20 i-point-up"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="EliminarCliente.aspx"><span class="icon"><i class="icon20 i-puzzle"></i></span><span class="txt">Eliminar</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menulojistas" runat="server"><a href="#"><span class="icon"><i class="icon20 i-cogs"></i></span><span class="txt">Lojistas</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirUtilizador.aspx"><span class="icon"><i class="icon20 i-IcoMoon"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarUtilizador.aspx"><span class="icon"><i class="icon20 i-point-up"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="EliminarUtilizador.aspx"><span class="icon"><i class="icon20 i-puzzle"></i></span><span class="txt">Eliminar</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menutecnicos" runat="server"><a href="#"><span class="icon"><i class="icon20 i-cogs"></i></span><span class="txt">Técnicos</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirTecnico.aspx"><span class="icon"><i class="icon20 i-IcoMoon"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarTecnico.aspx"><span class="icon"><i class="icon20 i-point-up"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="EliminarTecnico.aspx"><span class="icon"><i class="icon20 i-puzzle"></i></span><span class="txt">Eliminar</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menureparadores" runat="server"><a href="#"><span class="icon"><i class="icon20 i-cogs"></i></span><span class="txt">Reparadores Externos</span> </a>
+                                <ul class="sub">
+                                    <li><a href="InserirReparador.aspx"><span class="icon"><i class="icon20 i-IcoMoon"></i></span><span class="txt">Inserir</span> </a></li>
+                                    <li><a href="ListarReparador.aspx"><span class="icon"><i class="icon20 i-point-up"></i></span><span class="txt">Gerir/Editar</span> </a></li>
+                                    <li><a href="EliminarReparador.aspx"><span class="icon"><i class="icon20 i-puzzle"></i></span><span class="txt">Eliminar</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menurelatorios" runat="server"><a href="#"><span class="icon"><i class="icon20 i-file-8"></i></span><span class="txt">Relatórios</span> </a>
+                                <ul class="sub">
+                                    <li><a href="ContaCorrente.aspx"><span class="icon"><i class="icon20 i-warning"></i></span><span class="txt">Conta Corrente</span> </a></li>
+                                    <li><a href="PesquisaGeralOrdensReparacao.aspx"><span class="icon"><i class="icon20 i-credit"></i></span><span class="txt">Ordens Reparação</span> </a></li>
+                                    <li><a href="PesquisaGeralOrcamentos.aspx"><span class="icon"><i class="icon20 i-credit"></i></span><span class="txt">Orçamentos</span> </a></li>
+                                    <li><a href="ListagemGeralClientes.aspx"><span class="icon"><i class="icon20 i-user"></i></span><span class="txt">Clientes</span> </a></li>
+                                </ul>
+                            </li>
+                            <li id="menuAdmin" runat="server"><a href="#"><span class="icon"><i class="icon20 i-warning"></i></span><span class="txt">Administração</span> </a>
+                                <ul class="sub">
+                                    <li><a href="GerirCliente.aspx"><span class="icon"><i class="icon20 i-warning"></i></span><span class="txt">Gestão de Clientes</span> </a></li>
+                                    <li><a href="GerirORAdmin.aspx"><span class="icon"><i class="icon20 i-warning"></i></span><span class="txt">Gestão de OR's</span> </a></li>
+                                    <li><a href="GerirORCAdmin.aspx"><span class="icon"><i class="icon20 i-warning"></i></span><span class="txt">Gestão de Orçamentos</span> </a></li>
+                                    <li><a href="GerirLogs.aspx"><span class="icon"><i class="icon20 i-warning"></i></span><span class="txt">Consultar LOGS</span> </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- End #mainnav -->
+                </div>
+                <!-- End .sidebar-wrapper -->
+            </aside>
+            <!-- End #sidebar -->
+            <section id="content">
+                <div class="wrapper">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- End .wrapper -->
+            </section>
+        </div>
+        <!-- End .main -->
+
+
+
+        <asp:HiddenField ID="mail" runat="server" />
+        <asp:HiddenField ID="username" runat="server" />
+        <asp:HiddenField ID="username2" runat="server" />
+
+
+        <%--<div id="header" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="Default.aspx">
+                        <img src="../img/logo.png" alt="DygusSAT" /></a><a class="btn btn-navbar collapsed" id="main_menu_trigger" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="arrow"></span></a><div id="top_menu" class="nav notify-row">
+                        </div>
+                    <div class="top-nav ">
+                        <ul class="nav pull-right top-menu">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="../img/avatar1_small.jpg" alt="" /><span class="username" id="username2" runat="server"></span><b class="caret"></b></a><ul class="dropdown-menu">
+                                    <li><a href="PerfilUtilizador.aspx"><i class="icon-user"></i>&nbsp;Definições</a></li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <asp:LoginStatus runat="server" ID="lgStatus" OnLoggingOut="lgStatus_LoggingOut" CssClass="button" />
+                                    </li>
+                                    <li id="username" runat="server"></li>
+                                    <li id="mail" runat="server"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container" class="row-fluid">
+            <div id="sidebar" class="nav-collapse collapse">
+                <div class="sidebar-toggler hidden-phone"></div>
+                <ul class="sidebar-menu">
+                    <li class="has-sub active"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-dashboard"></i></span>Dashboard <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li><a class="" href="./index.html">Dashboard 1</a></li>
+                            <li class="active"><a class="" href="../index_2.html">Dashboard 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-book"></i></span>UI Elements <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li><a class="" href="../ui_elements_general.html">General</a></li>
+                            <li><a class="" href="../ui_elements_buttons.html">Buttons</a></li>
+                            <li><a class="" href="../ui_elements_tabs_accordions.html">Tabs & Accordions</a></li>
+                            <li><a class="" href="../ui_elements_typography.html">Typography</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-cogs"></i></span>Components <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li><a class="" href="../calendar.html">Calendar</a></li>
+                            <li><a class="" href="../data_table.html">Data Table</a></li>
+                            <li><a class="" href="../grids.html">Grids</a></li>
+                            <li><a class="" href="../charts.html">Visual Charts</a></li>
+                            <li><a class="" href="../messengers.html">Conversations</a></li>
+                            <li><a class="" href="../gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-tasks"></i></span>Form Stuff <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li><a class="" href="../form_layout.html">Form Layouts</a></li>
+                            <li><a class="" href="../form_component.html">Form Components</a></li>
+                            <li><a class="" href="../form_wizard.html">Form Wizard</a></li>
+                            <li><a class="" href="../form_validation.html">Form Validation</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-fire"></i></span>Icons <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li><a class="" href="../font_awesome.html">Font Awesome</a></li>
+                            <li><a class="" href="../glyphicons.html">Glyphicons</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-map-marker"></i></span>Maps <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li><a class="" href="../maps_google.html">Google Maps</a></li>
+                            <li><a class="" href="../maps_vector.html">Vector Maps</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-sub"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-file-alt"></i></span>Sample Pages <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li><a class="" href="../profile.html">Profile</a></li>
+                            <li><a class="" href="../blank.html">Blank Page</a></li>
+                            <li><a class="" href="../sidebar_closed.html">Sidebar Closed Page</a></li>
+                            <li><a class="" href="../pricing_tables.html">Pricing Tables</a></li>
+                            <li><a class="" href="../faq.html">FAQ</a></li>
+                            <li><a class="" href="../errors.html">Errors</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="" href="../login.html"><span class="icon-box"><i class="icon-user"></i></span>Login Page</a></li>
+                </ul>
+                <ul class="sidebar-menu">
+                    <li runat="server" id="dashboard"><a href="Default.aspx"><span class="icon-box"><i class="icon-dashboard"></i></span>Painel de Controlo</a></li>
+                    <li runat="server" id="config" class="has-sub"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-book"></i></span>Lojas <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li runat="server" id="configinsert">
+                                <a href="InserirLoja.aspx">Inserir</a>
+                            </li>
+                            <li runat="server" id="configedit">
+                                <a href="ListarLoja.aspx">Editar</a>
+                            </li>
+                            <li runat="server" id="configdelete">
+                                <a href="EliminarLoja.aspx">Eliminar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li runat="server" id="dados"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-cogs"></i></span>Eq.Substituição <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li runat="server" id="eqsinsert">
+                                <a href="InserirEquipamentoSubstituicao.aspx">Inserir</a>
+                            </li>
+                            <li runat="server" id="eqsedit">
+                                <a href="ListarEquipamentoSubstituicao.aspx">Editar</a>
+                            </li>
+                            <li runat="server" id="eqsdelete">
+                                <a href="EliminarEquipamentoSubstituicao.aspx">Eliminar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li runat="server" id="dadoscond"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-tasks"></i></span>Condições Gerais <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li runat="server" id="condinsert">
+                                <a href="InserirCondicaoGeral.aspx">Inserir</a>
+                            </li>
+                            <li runat="server" id="condedit">
+                                <a href="ListarCondicaoGeral.aspx">Editar</a>
+                            </li>
+                            <li runat="server" id="conddelete">
+                                <a href="EliminarCondicaoGeral.aspx">Eliminar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="or" runat="server"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-fire"></i></span>OR's <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li runat="server" id="orinsert">
+                                <a href="InserirOrdemReparacao.aspx">Inserir</a>
+                            </li>
+                            <li runat="server" id="ormanage">
+                                <a href="ListarTecnicoOrdemReparacao.aspx">Atribuir</a>
+                            </li>
+
+                            <li runat="server" id="orlist">
+                                <a href="ListarOrdemReparacao.aspx">Gerir/Editar</a>
+                            </li>
+
+                            <li runat="server" id="orlistgeral">
+                                <a href="ListagemGeralOrdensReparacao.aspx">Imprimir</a>
+                            </li>
+                            <li runat="server" id="orfecho">
+                                <a href="FecharOrdemReparacao.aspx">Fechar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li runat="server" id="clientes"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-map-marker"></i></span>Clientes <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li id="clientesinsert" runat="server">
+                                <a href="InserirCliente.aspx">Inserir</a>
+                            </li>
+                            <li id="clientesedit" runat="server">
+                                <a href="ListarCliente.aspx">Editar</a>
+                            </li>
+                            <li id="clientesdelete" runat="server">
+                                <a href="EliminarCliente.aspx">Eliminar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li runat="server" id="utilizadores"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-map-marker"></i></span>Lojistas <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li id="utilizadoresinsert" runat="server">
+                                <a href="InserirUtilizador.aspx">Inserir</a>
+                            </li>
+                            <li id="utilizadoresedit" runat="server">
+                                <a href="ListarUtilizador.aspx">Editar</a>
+                            </li>
+                            <li id="utilizadoresdelete" runat="server">
+                                <a href="EliminarUtilizador.aspx">Eliminar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li runat="server" id="tecnicos"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-map-marker"></i></span>Técnicos <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li runat="server" id="tecnicosinsert">
+                                <a href="InserirTecnico.aspx">Inserir</a>
+                            </li>
+                            <li runat="server" id="tecnicosedit">
+                                <a href="ListarTecnico.aspx">Editar</a>
+                            </li>
+                            <li runat="server" id="tecnicosdelete">
+                                <a href="EliminarTecnico.aspx">Eliminar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li runat="server" id="reparadores"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-map-marker"></i></span>Rep Externos <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li id="reparadoresinsert" runat="server">
+                                <a href="InserirReparador.aspx">Inserir</a>
+                            </li>
+                            <li id="reparadoresedit" runat="server">
+                                <a href="ListarReparador.aspx">Editar</a>
+                            </li>
+                            <li id="reparadoresdelete" runat="server">
+                                <a href="EliminarReparador.aspx">Eliminar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li runat="server" id="stocks"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-file-alt"></i></span>Armazém <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li runat="server" id="stocksarmazeminsert">
+                                <a href="InserirArmazem.aspx">Inserir</a>
+                            </li>
+                            <li runat="server" id="stocksarmazemedit">
+                                <a href="ListarArmazem.aspx">Editar</a>
+                            </li>
+                            <li runat="server" id="stocksarmazemdelete">
+                                <a href="EliminarArmazem.aspx">Eliminar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="stocksartigos" runat="server"><a href="javascript:;" class=""><span class="icon-box"><i class="icon-file-alt"></i></span>Artigos <span class="arrow"></span></a>
+                        <ul class="sub">
+                            <li runat="server" id="stocksprodutoinsert">
+                                <a href="InserirStocks.aspx">Inserir</a>
+                            </li>
+                            <li runat="server" id="stocksprodutoedit">
+                                <a href="ListarStocks.aspx">Editar</a>
+                            </li>
+                            <li runat="server" id="stocksprodutodelete">
+                                <a href="EliminarStocks.aspx">Eliminar</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="main-content">
+                
+            </div>
+        </div>
+        <div id="footer">
+            2013 &copy; DYGUS :: SAT.
+        <div class="span pull-right"><a href="#" target="_top"><span class="go-top"><i class="icon-arrow-up"></i></span></a></div>
+        </div>--%>
+    </form>
+</body>
+</html>

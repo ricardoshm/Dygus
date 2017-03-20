@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="onoff" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=onoff.db.12092063.hostedresource.com;Initial Catalog=onoff;User ID=onoff" SettingsObjectName="LINQ_DB.Properties.Settings" SettingsPropertyName="f2tekmobiledsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Armazem" Member="Armazems">
+    <Type Name="Armazem">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Armazem_Artigo" Member="Artigos" ThisKey="ID" OtherKey="ID_ARMAZEM" Type="Artigo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Artigo" Member="Artigos">
+    <Type Name="Artigo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_ARMAZEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODIGO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DATA_REGISTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Artigo_Artigo_Stock" Member="Artigo_Stocks" ThisKey="ID" OtherKey="ID_ARTIGO" Type="Artigo_Stock" />
+      <Association Name="Artigo_Ordem_Reparacao_Artigo" Member="Ordem_Reparacao_Artigos" ThisKey="ID" OtherKey="ID_ARTIGO" Type="Ordem_Reparacao_Artigo" />
+      <Association Name="Armazem_Artigo" Member="Armazem" ThisKey="ID_ARMAZEM" OtherKey="ID" Type="Armazem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Artigo_Stock" Member="Artigo_Stocks">
+    <Type Name="Artigo_Stock">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_ARTIGO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTD_DISPONIVEL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTD_MINIMA_STOCK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VALOR_CUSTO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VALOR_VENDA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VALOR_REVENDA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Artigo_Artigo_Stock" Member="Artigo" ThisKey="ID_ARTIGO" OtherKey="ID" Type="Artigo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Applications" Member="aspnet_Applications">
+    <Type Name="aspnet_Application">
+      <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredApplicationName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="aspnet_Application_aspnet_Membership" Member="aspnet_Memberships" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Membership" />
+      <Association Name="aspnet_Application_aspnet_Path" Member="aspnet_Paths" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Path" />
+      <Association Name="aspnet_Application_aspnet_Role" Member="aspnet_Roles" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Role" />
+      <Association Name="aspnet_Application_aspnet_User" Member="aspnet_Users" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Membership" Member="aspnet_Memberships">
+    <Type Name="aspnet_Membership">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordFormat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordSalt" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="MobilePIN" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="LoweredEmail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordQuestion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="PasswordAnswer" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsLockedOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLoginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastPasswordChangedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastLockoutDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FailedPasswordAnswerAttemptWindowStart" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="aspnet_Application_aspnet_Membership" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Paths" Member="aspnet_Paths">
+    <Type Name="aspnet_Path">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PathId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredPath" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser" Member="aspnet_PersonalizationAllUser" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationAllUser" Cardinality="One" />
+      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser" Member="aspnet_PersonalizationPerUsers" ThisKey="PathId" OtherKey="PathId" Type="aspnet_PersonalizationPerUser" />
+      <Association Name="aspnet_Application_aspnet_Path" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_PersonalizationAllUsers" Member="aspnet_PersonalizationAllUsers">
+    <Type Name="aspnet_PersonalizationAllUser">
+      <Column Name="PathId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PageSettings" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_Path_aspnet_PersonalizationAllUser" Member="aspnet_Path" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_PersonalizationPerUser" Member="aspnet_PersonalizationPerUsers">
+    <Type Name="aspnet_PersonalizationPerUser">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PathId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PageSettings" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_Path_aspnet_PersonalizationPerUser" Member="aspnet_Path" ThisKey="PathId" OtherKey="PathId" Type="aspnet_Path" IsForeignKey="true" />
+      <Association Name="aspnet_User_aspnet_PersonalizationPerUser" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Profile" Member="aspnet_Profiles">
+    <Type Name="aspnet_Profile">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PropertyNames" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PropertyValuesString" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PropertyValuesBinary" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastUpdatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_aspnet_Profile" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Roles" Member="aspnet_Roles">
+    <Type Name="aspnet_Role">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredRoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="aspnet_Role_aspnet_UsersInRole" Member="aspnet_UsersInRoles" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_UsersInRole" />
+      <Association Name="aspnet_Application_aspnet_Role" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_SchemaVersions" Member="aspnet_SchemaVersions">
+    <Type Name="aspnet_SchemaVersion">
+      <Column Name="Feature" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CompatibleSchemaVersion" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IsCurrentVersion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Users" Member="aspnet_Users">
+    <Type Name="aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_aspnet_Membership" Member="aspnet_Membership" ThisKey="UserId" OtherKey="UserId" Type="aspnet_Membership" Cardinality="One" />
+      <Association Name="aspnet_User_aspnet_PersonalizationPerUser" Member="aspnet_PersonalizationPerUsers" ThisKey="UserId" OtherKey="UserId" Type="aspnet_PersonalizationPerUser" />
+      <Association Name="aspnet_User_aspnet_Profile" Member="aspnet_Profile" ThisKey="UserId" OtherKey="UserId" Type="aspnet_Profile" Cardinality="One" />
+      <Association Name="aspnet_User_aspnet_UsersInRole" Member="aspnet_UsersInRoles" ThisKey="UserId" OtherKey="UserId" Type="aspnet_UsersInRole" />
+      <Association Name="aspnet_User_Funcionario" Member="Funcionarios" ThisKey="UserId" OtherKey="USERID" Type="Funcionario" />
+      <Association Name="aspnet_User_Orcamento" Member="Orcamentos" ThisKey="UserId" OtherKey="USERID" Type="Orcamento" />
+      <Association Name="aspnet_User_Orcamentos_Comentario" Member="Orcamentos_Comentarios" ThisKey="UserId" OtherKey="USERID_COMENTARIO" Type="Orcamentos_Comentario" />
+      <Association Name="aspnet_User_Parceiro" Member="Parceiros" ThisKey="UserId" OtherKey="USERID" Type="Parceiro" />
+      <Association Name="aspnet_Application_aspnet_User" Member="aspnet_Application" ThisKey="ApplicationId" OtherKey="ApplicationId" Type="aspnet_Application" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_UsersInRoles" Member="aspnet_UsersInRoles">
+    <Type Name="aspnet_UsersInRole">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="aspnet_Role_aspnet_UsersInRole" Member="aspnet_Role" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
+      <Association Name="aspnet_User_aspnet_UsersInRole" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_WebEvent_Events" Member="aspnet_WebEvent_Events">
+    <Type Name="aspnet_WebEvent_Event">
+      <Column Name="EventId" Type="System.String" DbType="Char(32) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EventTimeUtc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventType" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="EventSequence" Type="System.Decimal" DbType="Decimal(19,0) NOT NULL" CanBeNull="false" />
+      <Column Name="EventOccurrence" Type="System.Decimal" DbType="Decimal(19,0) NOT NULL" CanBeNull="false" />
+      <Column Name="EventCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventDetailCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="ApplicationPath" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="ApplicationVirtualPath" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="MachineName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestUrl" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="ExceptionType" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Condicoes_Gerais" Member="Condicoes_Gerais">
+    <Type Name="Condicoes_Gerai">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Configuracao" Member="Configuracaos">
+    <Type Name="Configuracao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="INICIAL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CODIGO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipamento_Avariado" Member="Equipamento_Avariados">
+    <Type Name="Equipamento_Avariado">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_MARCA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_MODELO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOVO_IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COD_SEGURANCA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DATA_REGISTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Equipamento_Avariado_Orcamento" Member="Orcamentos" ThisKey="ID" OtherKey="ID_EQUIPAMENTO_AVARIADO" Type="Orcamento" />
+      <Association Name="Equipamento_Avariado_Ordem_Reparacao" Member="Ordem_Reparacaos" ThisKey="ID" OtherKey="ID_EQUIPAMENTO_AVARIADO" Type="Ordem_Reparacao" />
+      <Association Name="Marca_Equipamento_Avariado" Member="Marca" ThisKey="ID_MARCA" OtherKey="ID" Type="Marca" IsForeignKey="true" />
+      <Association Name="Modelo_Equipamento_Avariado" Member="Modelo" ThisKey="ID_MODELO" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipamento_Avariado_Acessorio" Member="Equipamento_Avariado_Acessorios">
+    <Type Name="Equipamento_Avariado_Acessorio">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BATERIA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CARREGADOR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CARTAO_MEM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CARTAO_SIM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BOLSA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CAIXA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OUTROS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Equipamento_Avariado_Acessorio_Ordem_Reparacao" Member="Ordem_Reparacaos" ThisKey="ID" OtherKey="ID_ACESSORIOS" Type="Ordem_Reparacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipamento_Avariado_Bloqueio" Member="Equipamento_Avariado_Bloqueios">
+    <Type Name="Equipamento_Avariado_Bloqueio">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BLOQUEADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_OPERADORA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Equipamento_Avariado_Bloqueio_Ordem_Reparacao" Member="Ordem_Reparacaos" ThisKey="ID" OtherKey="ID_ESTADO_BLOQUEIO" Type="Ordem_Reparacao" />
+      <Association Name="Operadora_Equipamento_Avariado_Bloqueio" Member="Operadora" ThisKey="ID_OPERADORA" OtherKey="ID" Type="Operadora" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipamento_Avariado_Garantia" Member="Equipamento_Avariado_Garantias">
+    <Type Name="Equipamento_Avariado_Garantia">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Equipamento_Avariado_Garantia_Equipamento_Avariado_GarantiaTipo" Member="Equipamento_Avariado_GarantiaTipos" ThisKey="ID" OtherKey="ID_TIPO_GARANTIA" Type="Equipamento_Avariado_GarantiaTipo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipamento_Avariado_GarantiaTipo" Member="Equipamento_Avariado_GarantiaTipos">
+    <Type Name="Equipamento_Avariado_GarantiaTipo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_TIPO_GARANTIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Equipamento_Avariado_GarantiaTipo_Ordem_Reparacao" Member="Ordem_Reparacaos" ThisKey="ID" OtherKey="ID_TIPO_GARANTIA" Type="Ordem_Reparacao" />
+      <Association Name="Equipamento_Avariado_Garantia_Equipamento_Avariado_GarantiaTipo" Member="Equipamento_Avariado_Garantia" ThisKey="ID_TIPO_GARANTIA" OtherKey="ID" Type="Equipamento_Avariado_Garantia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipamento_Avariado_TimingReparacao" Member="Equipamento_Avariado_TimingReparacaos">
+    <Type Name="Equipamento_Avariado_TimingReparacao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Equipamento_Avariado_TimingReparacao_Ordem_Reparacao" Member="Ordem_Reparacaos" ThisKey="ID" OtherKey="ID_TIMING_REPARACAO" Type="Ordem_Reparacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipamento_Avariado_TrabalhosAdicionais" Member="Equipamento_Avariado_TrabalhosAdicionais">
+    <Type Name="Equipamento_Avariado_TrabalhosAdicionai">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RESET_SOFTWARE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ACTUALIZACAO_SOFTWARE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="REPARACAO_HARDWARE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LIMPEZA_GERAL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BACKUP_INFORMACAO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Equipamento_Avariado_TrabalhosAdicionai_Orcamento" Member="Orcamentos" ThisKey="ID" OtherKey="ID_TRABALHOS_ADICIONAIS" Type="Orcamento" />
+      <Association Name="Equipamento_Avariado_TrabalhosAdicionai_Ordem_Reparacao" Member="Ordem_Reparacaos" ThisKey="ID" OtherKey="ID_TRABALHOS_ADICIONAIS" Type="Ordem_Reparacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipamentos_Substituicao" Member="Equipamentos_Substituicaos">
+    <Type Name="Equipamentos_Substituicao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_DISPONIBILIDADE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODIGO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_MARCA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_MODELO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BATERIA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CARTAO_SIM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CARTAO_MEMORIA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CARREGADOR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="VALOR" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OBSERVACAOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DATA_REGISTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Equipamentos_Substituicao_Ordem_Reparacao" Member="Ordem_Reparacaos" ThisKey="ID" OtherKey="ID_EQUIPAMENTO_SUBSTITUICAO" Type="Ordem_Reparacao" />
+      <Association Name="Equipamentos_Substituicao_Disponibilidade_Equipamentos_Substituicao" Member="Equipamentos_Substituicao_Disponibilidade" ThisKey="ID_DISPONIBILIDADE" OtherKey="ID" Type="Equipamentos_Substituicao_Disponibilidade" IsForeignKey="true" />
+      <Association Name="Marca_Equipamentos_Substituicao" Member="Marca" ThisKey="ID_MARCA" OtherKey="ID" Type="Marca" IsForeignKey="true" />
+      <Association Name="Modelo_Equipamentos_Substituicao" Member="Modelo" ThisKey="ID_MODELO" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Equipamentos_Substituicao_Disponibilidade" Member="Equipamentos_Substituicao_Disponibilidades">
+    <Type Name="Equipamentos_Substituicao_Disponibilidade">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Equipamentos_Substituicao_Disponibilidade_Equipamentos_Substituicao" Member="Equipamentos_Substituicaos" ThisKey="ID" OtherKey="ID_DISPONIBILIDADE" Type="Equipamentos_Substituicao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Funcionario" Member="Funcionarios">
+    <Type Name="Funcionario">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USERID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ID_LOJA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_TIPO_FUNCIONARIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CODIGO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DATA_REGISTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_VALIDADE_LOGIN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="aspnet_User_Funcionario" Member="aspnet_User" ThisKey="USERID" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="Funcionario_Tipo_Funcionario" Member="Funcionario_Tipo" ThisKey="ID_TIPO_FUNCIONARIO" OtherKey="ID" Type="Funcionario_Tipo" IsForeignKey="true" />
+      <Association Name="Loja_Funcionario" Member="Loja" ThisKey="ID_LOJA" OtherKey="ID" Type="Loja" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Funcionario_Tipo" Member="Funcionario_Tipos">
+    <Type Name="Funcionario_Tipo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Funcionario_Tipo_Funcionario" Member="Funcionarios" ThisKey="ID" OtherKey="ID_TIPO_FUNCIONARIO" Type="Funcionario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Logs" Member="Logs">
+    <Type Name="Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USERID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DATA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MENU" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="VISIVEL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Loja" Member="Lojas">
+    <Type Name="Loja">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODIGO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="URL_FOTO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NOME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MORADA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CODPOSTAL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LOCALIDADE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TELEFONE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NIF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Loja_Funcionario" Member="Funcionarios" ThisKey="ID" OtherKey="ID_LOJA" Type="Funcionario" />
+      <Association Name="Loja_Orcamento" Member="Orcamentos" ThisKey="ID" OtherKey="ID_LOJA" Type="Orcamento" />
+      <Association Name="Loja_Ordem_Reparacao" Member="Ordem_Reparacaos" ThisKey="ID" OtherKey="ID_LOJA" Type="Ordem_Reparacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Marca" Member="Marcas">
+    <Type Name="Marca">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Marca_Equipamento_Avariado" Member="Equipamento_Avariados" ThisKey="ID" OtherKey="ID_MARCA" Type="Equipamento_Avariado" />
+      <Association Name="Marca_Equipamentos_Substituicao" Member="Equipamentos_Substituicaos" ThisKey="ID" OtherKey="ID_MARCA" Type="Equipamentos_Substituicao" />
+      <Association Name="Marca_Modelo" Member="Modelos" ThisKey="ID" OtherKey="ID_MARCA" Type="Modelo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Modelo" Member="Modelos">
+    <Type Name="Modelo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_MARCA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Modelo_Equipamento_Avariado" Member="Equipamento_Avariados" ThisKey="ID" OtherKey="ID_MODELO" Type="Equipamento_Avariado" />
+      <Association Name="Modelo_Equipamentos_Substituicao" Member="Equipamentos_Substituicaos" ThisKey="ID" OtherKey="ID_MODELO" Type="Equipamentos_Substituicao" />
+      <Association Name="Marca_Modelo" Member="Marca" ThisKey="ID_MARCA" OtherKey="ID" Type="Marca" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Operadora" Member="Operadoras">
+    <Type Name="Operadora">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Operadora_Equipamento_Avariado_Bloqueio" Member="Equipamento_Avariado_Bloqueios" ThisKey="ID" OtherKey="ID_OPERADORA" Type="Equipamento_Avariado_Bloqueio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orcamentos" Member="Orcamentos">
+    <Type Name="Orcamento">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODIGO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="USERID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ID_LOJA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CLIENTE_NOTIFICADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CLIENTE_ACEITOU" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CLIENTE_REJEITOU" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="VALOR_ORCAMENTO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ID_EQUIPAMENTO_AVARIADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRICAO_DETALHADA_AVARIA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_TRABALHOS_ADICIONAIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATA_REGISTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_CONCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CONVERTIDO_OR" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_OR_ORIGEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Orcamento_Orcamento" Member="Orcamento2" ThisKey="ID" OtherKey="ID" Type="Orcamento" Cardinality="One" />
+      <Association Name="Orcamento_Orcamentos_Comentario" Member="Orcamentos_Comentarios" ThisKey="ID" OtherKey="ID_ORCAMENTO" Type="Orcamentos_Comentario" />
+      <Association Name="aspnet_User_Orcamento" Member="aspnet_User" ThisKey="USERID" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="Equipamento_Avariado_Orcamento" Member="Equipamento_Avariado" ThisKey="ID_EQUIPAMENTO_AVARIADO" OtherKey="ID" Type="Equipamento_Avariado" IsForeignKey="true" />
+      <Association Name="Equipamento_Avariado_TrabalhosAdicionai_Orcamento" Member="Equipamento_Avariado_TrabalhosAdicionai" ThisKey="ID_TRABALHOS_ADICIONAIS" OtherKey="ID" Type="Equipamento_Avariado_TrabalhosAdicionai" IsForeignKey="true" />
+      <Association Name="Loja_Orcamento" Member="Loja" ThisKey="ID_LOJA" OtherKey="ID" Type="Loja" IsForeignKey="true" />
+      <Association Name="Orcamento_Orcamento" Member="Orcamento1" ThisKey="ID" OtherKey="ID" Type="Orcamento" IsForeignKey="true" />
+      <Association Name="Orcamentos_Estado_Orcamento" Member="Orcamentos_Estado" ThisKey="ID_ESTADO" OtherKey="ID" Type="Orcamentos_Estado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orcamentos_Comentarios" Member="Orcamentos_Comentarios">
+    <Type Name="Orcamentos_Comentario">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USERID_COMENTARIO" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="COMENTARIO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_ORCAMENTO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATA_COMENTARIO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="aspnet_User_Orcamentos_Comentario" Member="aspnet_User" ThisKey="USERID_COMENTARIO" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="Orcamento_Orcamentos_Comentario" Member="Orcamento" ThisKey="ID_ORCAMENTO" OtherKey="ID" Type="Orcamento" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orcamentos_Estado" Member="Orcamentos_Estados">
+    <Type Name="Orcamentos_Estado">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Orcamentos_Estado_Orcamento" Member="Orcamentos" ThisKey="ID" OtherKey="ID_ESTADO" Type="Orcamento" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ordem_Reparacao" Member="Ordem_Reparacaos">
+    <Type Name="Ordem_Reparacao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODIGO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="USERID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ID_LOJA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ATRIBUIDA" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CLIENTE_NOTIFICADO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="VALOR_CUSTO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VALOR_FINAL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VALOR_ADICIONAL_REPARACAO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VALOR_PREVISTO_REPARACAO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ID_EQUIPAMENTO_SUBSTITUICAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_EQUIPAMENTO_AVARIADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ESTADO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRICAO_DETALHADA_PROBLEMA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_TRABALHOS_ADICIONAIS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ESTADO_BLOQUEIO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ACESSORIOS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_TIMING_REPARACAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_TIPO_GARANTIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATA_REGISTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_PREVISTA_CONCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_CONCLUSAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_LEVANTAMENTO_EQUIPAMENTO_AVARIADO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Ordem_Reparacao_Ordem_Reparacao_Artigo" Member="Ordem_Reparacao_Artigos" ThisKey="ID" OtherKey="ID_ORDEM_REPARACAO" Type="Ordem_Reparacao_Artigo" />
+      <Association Name="Ordem_Reparacao_Ordem_Reparacao_Atribuicao" Member="Ordem_Reparacao_Atribuicaos" ThisKey="ID" OtherKey="ID_ORDEM_REPARACAO" Type="Ordem_Reparacao_Atribuicao" />
+      <Association Name="Ordem_Reparacao_Ordem_Reparacao_MaoObra" Member="Ordem_Reparacao_MaoObras" ThisKey="ID" OtherKey="ID_ORDEM_REPARACAO" Type="Ordem_Reparacao_MaoObra" />
+      <Association Name="Equipamento_Avariado_Ordem_Reparacao" Member="Equipamento_Avariado" ThisKey="ID_EQUIPAMENTO_AVARIADO" OtherKey="ID" Type="Equipamento_Avariado" IsForeignKey="true" />
+      <Association Name="Equipamento_Avariado_Acessorio_Ordem_Reparacao" Member="Equipamento_Avariado_Acessorio" ThisKey="ID_ACESSORIOS" OtherKey="ID" Type="Equipamento_Avariado_Acessorio" IsForeignKey="true" />
+      <Association Name="Equipamento_Avariado_Bloqueio_Ordem_Reparacao" Member="Equipamento_Avariado_Bloqueio" ThisKey="ID_ESTADO_BLOQUEIO" OtherKey="ID" Type="Equipamento_Avariado_Bloqueio" IsForeignKey="true" />
+      <Association Name="Equipamento_Avariado_GarantiaTipo_Ordem_Reparacao" Member="Equipamento_Avariado_GarantiaTipo" ThisKey="ID_TIPO_GARANTIA" OtherKey="ID" Type="Equipamento_Avariado_GarantiaTipo" IsForeignKey="true" />
+      <Association Name="Equipamento_Avariado_TimingReparacao_Ordem_Reparacao" Member="Equipamento_Avariado_TimingReparacao" ThisKey="ID_TIMING_REPARACAO" OtherKey="ID" Type="Equipamento_Avariado_TimingReparacao" IsForeignKey="true" />
+      <Association Name="Equipamento_Avariado_TrabalhosAdicionai_Ordem_Reparacao" Member="Equipamento_Avariado_TrabalhosAdicionai" ThisKey="ID_TRABALHOS_ADICIONAIS" OtherKey="ID" Type="Equipamento_Avariado_TrabalhosAdicionai" IsForeignKey="true" />
+      <Association Name="Equipamentos_Substituicao_Ordem_Reparacao" Member="Equipamentos_Substituicao" ThisKey="ID_EQUIPAMENTO_SUBSTITUICAO" OtherKey="ID" Type="Equipamentos_Substituicao" IsForeignKey="true" />
+      <Association Name="Loja_Ordem_Reparacao" Member="Loja" ThisKey="ID_LOJA" OtherKey="ID" Type="Loja" IsForeignKey="true" />
+      <Association Name="Ordem_Reparacao_Estado_Ordem_Reparacao" Member="Ordem_Reparacao_Estado" ThisKey="ID_ESTADO" OtherKey="ID" Type="Ordem_Reparacao_Estado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ordem_Reparacao_Artigo" Member="Ordem_Reparacao_Artigos">
+    <Type Name="Ordem_Reparacao_Artigo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_ORDEM_REPARACAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ARTIGO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QTD_ARTIGO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VALOR_ARTIGO" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Artigo_Ordem_Reparacao_Artigo" Member="Artigo" ThisKey="ID_ARTIGO" OtherKey="ID" Type="Artigo" IsForeignKey="true" />
+      <Association Name="Ordem_Reparacao_Ordem_Reparacao_Artigo" Member="Ordem_Reparacao" ThisKey="ID_ORDEM_REPARACAO" OtherKey="ID" Type="Ordem_Reparacao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ordem_Reparacao_Atribuicao" Member="Ordem_Reparacao_Atribuicaos">
+    <Type Name="Ordem_Reparacao_Atribuicao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_ORDEM_REPARACAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USERID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DATA_REGISTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Ordem_Reparacao_Ordem_Reparacao_Atribuicao" Member="Ordem_Reparacao" ThisKey="ID_ORDEM_REPARACAO" OtherKey="ID" Type="Ordem_Reparacao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ordem_Reparacao_Estado" Member="Ordem_Reparacao_Estados">
+    <Type Name="Ordem_Reparacao_Estado">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Ordem_Reparacao_Estado_Ordem_Reparacao" Member="Ordem_Reparacaos" ThisKey="ID" OtherKey="ID_ESTADO" Type="Ordem_Reparacao" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ordem_Reparacao_MaoObra" Member="Ordem_Reparacao_MaoObras">
+    <Type Name="Ordem_Reparacao_MaoObra">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_ORDEM_REPARACAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="VALOR" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Ordem_Reparacao_Ordem_Reparacao_MaoObra" Member="Ordem_Reparacao" ThisKey="ID_ORDEM_REPARACAO" OtherKey="ID" Type="Ordem_Reparacao" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Parceiro" Member="Parceiros">
+    <Type Name="Parceiro">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODIGO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="USERID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ID_TIPO_PARCEIRO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATA_REGISTO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_ULTIMA_MODIFICACAO" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DATA_VALIDADE_LOGIN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="NOME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MORADA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CODPOSTAL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LOCALIDADE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TELEFONE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NIF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CLIENTE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="aspnet_User_Parceiro" Member="aspnet_User" ThisKey="USERID" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="Parceiro_Tipo_Parceiro" Member="Parceiro_Tipo" ThisKey="ID_TIPO_PARCEIRO" OtherKey="ID" Type="Parceiro_Tipo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Parceiro_Tipo" Member="Parceiro_Tipos">
+    <Type Name="Parceiro_Tipo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Parceiro_Tipo_Parceiro" Member="Parceiros" ThisKey="ID" OtherKey="ID_TIPO_PARCEIRO" Type="Parceiro" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Versao" Member="Versaos">
+    <Type Name="Versao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VERSAO" Member="VERSAO1" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DATA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

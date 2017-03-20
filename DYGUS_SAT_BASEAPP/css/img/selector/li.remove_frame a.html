@@ -1,0 +1,176 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+        
+        <title>SuggeElson | theme: genyx</title>
+        
+        <link href="./selector/styles.css.html" rel="stylesheet" media="all" />
+	      
+        <script type="text/javascript" src="./selector/jquery-1.4.2.min.js.html"></script>
+        <script type="text/javascript" src="./selector/jquery.framerate.js.html"></script>
+        <script type="text/javascript" src="./selector/imagepreview.js.html"></script>
+        
+        <script type="text/javascript">
+        
+        var theme_list_open = false;
+        
+        $(document).ready(function () {
+			$().framerate({framerate: 18})
+			$('#res-test a').click(function() {
+				//console.log($(this));
+				$('body').css('background', '#111111');
+				if($(this).hasClass('active')) {
+					//do noting
+				} else {
+					//remove active class and add active to this element
+					$('#res-test > a.active').removeClass('active');
+					$(this).addClass('active');
+				}
+
+				if($(this).hasClass('desktop')) {
+					$('#iframe').css({'width' : '100%', 'left' : '0', 'margin-left' : '0' });
+				} else if ($(this).hasClass('tabletL')) {
+					$('#iframe').animate({
+						left: '50%',
+						width: '1039px',
+						'margin-left' : '-520px'
+					}, 500, function() {
+						
+					});
+				} else if ($(this).hasClass('tabletP')) {
+					$('#iframe').animate({
+						left: '50%',
+						width: '783px',
+						'margin-left' : '-392px'
+					}, 500, function() {
+						
+					});
+				} else if ($(this).hasClass('phoneL')) {
+					$('#iframe').animate({
+						left: '50%',
+						width: '495px',
+						'margin-left' : '-248px'
+					}, 500, function() {
+						
+					});
+				} else if ($(this).hasClass('phoneP')) {
+					$('#iframe').animate({
+						left: '50%',
+						width: '335px',
+						'margin-left' : '-168px'
+					}, 500, function() {
+						
+					});
+				}
+			});
+        
+        	function fixHeight () {
+        	
+        	var headerHeight = $("#switcher").height();
+        	        	
+        	$("#iframe").attr("height", (($(window).height()) - headerHeight) + 'px');
+        	
+        	}
+        	
+        	$(window).resize(function () {
+               	var wsize =  $(window).width();
+				var size ="Window size is:" + $(window).width();
+				//console.log(size);
+				
+        		fixHeight();
+        	
+        	}).resize();
+        	
+        	$("#theme_select").click( function () {
+        	
+        		if (theme_list_open == true) {
+        	
+        		$(".center ul li ul").hide();
+        		
+        		theme_list_open = false;
+        		
+        		} else {
+        		
+        		$(".center ul li ul").show();         		
+        		
+        		theme_list_open = true;
+        		
+        		}
+        		
+        		return false;
+        	
+        	});
+        	
+        	$("#theme_list ul li a").click(function () {
+        	
+        	var theme_data = $(this).attr("rel").split(",");
+        	        	
+        	$("./li.purchase a.html").attr("href", theme_data[1]);
+        	$("./li.remove_frame a.html").attr("href", theme_data[0]);
+        	$("#iframe").attr("src", theme_data[0]);
+        	
+        	$("#theme_list a#theme_select").text($(this).text());
+        	
+        	$(".center ul li ul").hide();
+        	
+        	theme_list_open = false;
+        	
+        	return false;
+        	
+        	});
+        
+        });
+        
+        </script>
+         
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+
+	<div id="switcher">
+	
+		<div class="center">
+		
+		<ul>
+
+			<li id="logo">
+				<a href="http://themeforest.net/user/SuggeElson/portfolio?ref=SuggeElson" target="_blank">
+				</a>
+			</li>
+			<li id="res-test">
+				<a href="#" class="desktop active" title="Desktop">Desktop</a>
+				<a href="#" class="tabletL" title="Tablet Landscape">Tablet Landscape</a>
+				<a href="#" class="tabletP" title="Tablet Portrait">Tablet Portrait</a>
+				<a href="#" class="phoneL" title="Smartphone Landscape">Smartphone Landscape</a>
+				<a href="#" class="phoneP" title="Smartphone Portrait">Smartphone Portrait</a>
+			</li>
+			<li id="theme_list">
+				<a id="theme_select" href="#">Select A Theme...</a>
+			
+				<ul class="themedropdown">
+					<li><a href="#" data-rel="previews/genyx.jpg" rel="http://themes.suggeelson.com/genyx/,http://themeforest.net/item/genyx-responsive-admin-template/4874839?ref=SuggeElson" class="screenshot"><span class="themetitle"><span class="html">HTML/CSS  </span>Genyx</span></a></li><li><a href="#" data-rel="previews/supr.jpg" rel="http://themes.suggeelson.com/supr/,http://themeforest.net/item/supr-responsive-admin-template/2834580?ref=SuggeElson" class="screenshot"><span class="themetitle"><span class="html">HTML/CSS  </span>Supr</span></a></li><li><a href="#" data-rel="previews/supr.jpg" rel="http://themes.suggeelson.com/supr/fixed/,http://themeforest.net/item/supr-responsive-admin-template/2834580?ref=SuggeElson" class="screenshot"><span class="themetitle"><span class="html">HTML/CSS  </span>Supr-fixed</span></a></li><li><a href="#" data-rel="previews/hurricane.jpg" rel="http://themes.suggeelson.com/hurricane/,http://themeforest.net/item/hurricane-responsive-liquid-admin-template/2244903?ref=SuggeElson" class="screenshot"><span class="themetitle"><span class="html">HTML/CSS  </span>Hurricane</span></a></li>					
+				</ul>
+			
+			</li>	
+			
+			<li class="remove_frame" rel="http://themes.suggeelson.com/genyx/"><a href="../../../../../../../../../../index.html"></a></li>
+			<li class="purchase" rel="http://themeforest.net/item/genyx-responsive-admin-template/4874839?ref=SuggeElson"><a href="http://themeforest.net/item/genyx-responsive-admin-template/4874839?ref=SuggeElson"></a></li>	
+			
+			</ul></div>
+		
+		
+	
+	</div>
+	
+    <iframe id="iframe" src="../../../../../../../../../../index.html" frameborder="0" height="100%">
+		&lt;h1&gt;Hmm! apparently your browser doesn't support the iFrame element.&lt;/h1&gt;
+		&lt;h2&gt;This is awkward! &lt;/h2&gt;
+	</iframe>
+    
+</body>
+
+</html>
+

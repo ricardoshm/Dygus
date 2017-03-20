@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DYGUS_SAT_BASEAPP", "DYGUS_SAT_BASEAPP\DYGUS_SAT_BASEAPP.csproj", "{6E823300-F06B-45B7-A7D9-E62D8467CC5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ_DB", "LINQ_DB\LINQ_DB.csproj", "{3076239D-4B4F-4805-A9D9-1C693B724CBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{CBFBB744-7F8A-4D2E-A40F-BC05698CF086}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E823300-F06B-45B7-A7D9-E62D8467CC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E823300-F06B-45B7-A7D9-E62D8467CC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E823300-F06B-45B7-A7D9-E62D8467CC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E823300-F06B-45B7-A7D9-E62D8467CC5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3076239D-4B4F-4805-A9D9-1C693B724CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3076239D-4B4F-4805-A9D9-1C693B724CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3076239D-4B4F-4805-A9D9-1C693B724CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3076239D-4B4F-4805-A9D9-1C693B724CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBFBB744-7F8A-4D2E-A40F-BC05698CF086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBFBB744-7F8A-4D2E-A40F-BC05698CF086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBFBB744-7F8A-4D2E-A40F-BC05698CF086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBFBB744-7F8A-4D2E-A40F-BC05698CF086}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs41
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DYGUS_SAT_BASEAPP\\DYGUS_SAT_BASEAPP.csproj
+		SccProjectName1 = DYGUS_SAT_BASEAPP
+		SccLocalPath1 = DYGUS_SAT_BASEAPP
+		SccProjectUniqueName2 = EmailService\\EmailService.csproj
+		SccProjectName2 = EmailService
+		SccLocalPath2 = EmailService
+		SccProjectUniqueName3 = LINQ_DB\\LINQ_DB.csproj
+		SccProjectName3 = LINQ_DB
+		SccLocalPath3 = LINQ_DB
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal
