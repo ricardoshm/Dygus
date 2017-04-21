@@ -1,58 +1,51 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="DYGUS_SAT_BASEAPP.Master" %>
+
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>Dygus :: Support & AfterSales</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta name="author" content="NHDTech" />
+    <meta name="author" content="Dygus" />
     <meta name="description" content="Dygus :: SAT - Support & Techinal Assistance" />
     <meta name="keywords" content="dygus, assistência técnica, telecomunicações" />
     <meta name="application-name" content="Dygus :: SAT" />
-    <!-- Headings -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
-    <!-- Text -->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
-    <!--[if lt IE 9]> <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" /> <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" /> <link href="http://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet" type="text/css" /> <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" /> <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" /> <![endif]-->
-    <!-- Core stylesheets do not remove -->
-    <link href="css/bootstrap/bootstrap.css" rel="stylesheet" />
-    <link href="css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="css/icons.css" rel="stylesheet" />
-    <!-- Plugins stylesheets -->
-    <link href="js/plugins/forms/uniform/uniform.default.css" rel="stylesheet" />
-    <!-- app stylesheets -->
-    <link href="css/app.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700|Droid+Sans:400,700" />
+    <!--[if lt IE 9]>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!-- Css files -->
+    <!-- build:css assets/css/main.min.css -->
+    <!-- Icons -->
+    <link href="assets/css/icons.css" rel="stylesheet" />
+    <!-- jQueryUI -->
+    <link href="assets/css/sprflat-theme/jquery.ui.all.css" rel="stylesheet" />
+    <!-- Bootstrap stylesheets (included template modifications) -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Plugins stylesheets (all plugin custom css) -->
+    <link href="assets/css/plugins.css" rel="stylesheet" />
+    <!-- Main stylesheets (template main css file) -->
+    <link href="assets/css/main.css" rel="stylesheet" />
     <!-- Custom stylesheets ( Put your own changes here ) -->
-    <link href="css/custom.css" rel="stylesheet" />
-    <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]> </script><script src="js/html5shiv.js"></script></script> <![endif]-->
+    <link href="assets/css/custom.css" rel="stylesheet" />
+    <!-- endbuild -->
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-    <link rel="shortcut icon" href="images/ico/favicon.html">
-    <!-- Le javascript ================================================== -->
-    <!-- Important plugins put in all pages -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/bootstrap/bootstrap.js"></script>
-    <script src="js/conditionizr.min.js"></script>
-    <script src="js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="js/plugins/core/jrespond/jRespond.min.js"></script>
-    <script src="js/jquery.genyxAdmin.js"></script>
-    <!-- Form plugins -->
-    <script src="js/plugins/forms/uniform/jquery.uniform.min.js"></script>
-    <script src="js/plugins/forms/validation/jquery.validate.js"></script>
-    <!-- Init plugins -->
-    <script src="js/app.js"></script>
-    <!-- Core js functions -->
-    <script src="js/pages/login.js"></script>
-    <!-- Init plugins only for page -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="assets/img/ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="icon" href="assets/img/ico/favicon.ico" type="image/png" />
+    <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
+    <meta name="msapplication-TileColor" content="#3399cc" />
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
-<body>
+<body class="login-page">
     <form id="form1" runat="server">
         <telerik:RadScriptManager runat="server" ID="scriptManagerMaster"></telerik:RadScriptManager>
         <asp:ContentPlaceHolder runat="server" ID="MainContent" />

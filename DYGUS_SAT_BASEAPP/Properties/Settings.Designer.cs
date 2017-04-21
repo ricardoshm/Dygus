@@ -22,5 +22,41 @@ namespace DYGUS_SAT_BASEAPP.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("assistenciatecnica@dygus.com")]
+        public string EmailSender {
+            get {
+                return ((string)(this["EmailSender"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dygus.com")]
+        public string EmailHost {
+            get {
+                return ((string)(this["EmailHost"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EmailSSL {
+            get {
+                return ((bool)(this["EmailSSL"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DYGUS - Assistência Técnica")]
+        public string EmailAlias {
+            get {
+                return ((string)(this["EmailAlias"]));
+            }
+        }
     }
 }

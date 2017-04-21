@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -216,6 +217,13 @@ namespace DYGUS_SAT_BASEAPP.Home
                 Response.Redirect("~/Default.aspx", true);
 
             useridPublic = userid;
+
+            //EMAIL emailConfig = new EMAIL();
+            //emailConfig.SENDEREMAIL = ConfigurationManager.AppSettings["SENDEREMAIL"].ToString();
+            //emailConfig.SMTPHOST = ConfigurationManager.AppSettings["SMTPHOST"].ToString();
+            //emailConfig.SENDEREMAILALIAS = ConfigurationManager.AppSettings["SENDEREMAILALIAS"].ToString();
+            //emailConfig.SENDEREMAILPASS = ConfigurationManager.AppSettings["SENDEREMAILPASS"].ToString();
+            //emailConfig.SENDEREMAILSSL = Convert.ToBoolean(ConfigurationManager.AppSettings["SENDEREMAILSSL"]);
         }
 
         public static void ShowAlertMessage(string error)

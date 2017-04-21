@@ -56,7 +56,7 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.3.11\lib\net40\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.4.4\lib\net40\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.Linq" />
@@ -79,14 +79,199 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Telerik.Web.UI, Version=2013.3.1015.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Telerik\RadControls for ASP.NET AJAX Q3 2013\Bin40\Telerik.Web.UI.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\TelerikASP.NET\UI for ASP.NET AJAX Q3 2015\Bin40\Telerik.Web.UI.dll</HintPath>
     </Reference>
     <Reference Include="Telerik.Web.UI.Skins, Version=2013.3.1015.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Telerik\RadControls for ASP.NET AJAX Q3 2013\Bin40\Telerik.Web.UI.Skins.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\TelerikASP.NET\UI for ASP.NET AJAX Q3 2015\Bin40\Telerik.Web.UI.Skins.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\custom.css" />
+    <Content Include="assets\css\fonts\fontawesome.html" />
+    <Content Include="assets\css\icons.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\main.min.css" />
+    <Content Include="assets\css\plugins.css" />
+    <Content Include="assets\css\sprflat-theme\images\animated-overlay.gif" />
+    <Content Include="assets\css\sprflat-theme\images\ui-icons_454545_5F256x240.png" />
+    <Content Include="assets\css\sprflat-theme\images\ui-icons_62aeef_5F256x240.png" />
+    <Content Include="assets\css\sprflat-theme\images\ui-icons_636363_5F256x240.png" />
+    <Content Include="assets\css\sprflat-theme\images\ui-icons_888888_5F256x240.png" />
+    <Content Include="assets\css\sprflat-theme\images\ui-icons_cd0a0a_5F256x240.png" />
+    <Content Include="assets\css\sprflat-theme\images\_notes\dwsync.xml" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.accordion.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.all.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.autocomplete.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.base.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.button.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.core.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.datepicker.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.dialog.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.menu.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.progressbar.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.resizable.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.selectable.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.slider.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.spinner.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.tabs.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.theme.css" />
+    <Content Include="assets\css\sprflat-theme\jquery.ui.tooltip.css" />
+    <Content Include="assets\css\sprflat-theme\_notes\dwsync.xml" />
+    <Content Include="assets\css\_notes\dwsync.xml" />
+    <Content Include="assets\fonts\brocolidry.svg" />
+    <Content Include="assets\fonts\ecoico.svg" />
+    <Content Include="assets\fonts\entypo.svg" />
+    <Content Include="assets\fonts\fontawesome.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="assets\fonts\icomoon.svg" />
+    <Content Include="assets\fonts\meteo.svg" />
+    <Content Include="assets\fonts\steadysets.svg" />
+    <Content Include="assets\img\avatars\128.jpg" />
+    <Content Include="assets\img\avatars\129.jpg" />
+    <Content Include="assets\img\avatars\130.jpg" />
+    <Content Include="assets\img\avatars\131.jpg" />
+    <Content Include="assets\img\avatars\132.jpg" />
+    <Content Include="assets\img\avatars\48.jpg" />
+    <Content Include="assets\img\avatars\49.jpg" />
+    <Content Include="assets\img\avatars\50.jpg" />
+    <Content Include="assets\img\avatars\51.jpg" />
+    <Content Include="assets\img\avatars\52.jpg" />
+    <Content Include="assets\img\avatars\53.jpg" />
+    <Content Include="assets\img\avatars\54.jpg" />
+    <Content Include="assets\img\avatars\55.jpg" />
+    <Content Include="assets\img\avatars\56.jpg" />
+    <Content Include="assets\img\avatars\57.jpg" />
+    <Content Include="assets\img\avatars\58.jpg" />
+    <Content Include="assets\img\avatars\59.jpg" />
+    <Content Include="assets\img\avatars\_notes\dwsync.xml" />
+    <Content Include="assets\img\backtop.png" />
+    <Content Include="assets\img\blog\blog-post.jpg" />
+    <Content Include="assets\img\blog\_notes\dwsync.xml" />
+    <Content Include="assets\img\carousel\1.jpg" />
+    <Content Include="assets\img\carousel\2.jpg" />
+    <Content Include="assets\img\carousel\3.jpg" />
+    <Content Include="assets\img\carousel\_notes\dwsync.xml" />
+    <Content Include="assets\img\gallery\1.jpg" />
+    <Content Include="assets\img\gallery\10.jpg" />
+    <Content Include="assets\img\gallery\11.jpg" />
+    <Content Include="assets\img\gallery\12.jpg" />
+    <Content Include="assets\img\gallery\2.jpg" />
+    <Content Include="assets\img\gallery\3.jpg" />
+    <Content Include="assets\img\gallery\4.jpg" />
+    <Content Include="assets\img\gallery\5.jpg" />
+    <Content Include="assets\img\gallery\6.jpg" />
+    <Content Include="assets\img\gallery\7.jpg" />
+    <Content Include="assets\img\gallery\8.jpg" />
+    <Content Include="assets\img\gallery\9.jpg" />
+    <Content Include="assets\img\gallery\_notes\dwsync.xml" />
+    <Content Include="assets\img\hammer.png" />
+    <Content Include="assets\img\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="assets\img\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="assets\img\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="assets\img\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="assets\img\ico\favicon.ico" />
+    <Content Include="assets\img\ico\_notes\dwsync.xml" />
+    <Content Include="assets\img\instagram\instagram.jpg" />
+    <Content Include="assets\img\instagram\instagram2.jpg" />
+    <Content Include="assets\img\instagram\instagram3.jpg" />
+    <Content Include="assets\img\instagram\_notes\dwsync.xml" />
+    <Content Include="assets\img\loading.gif" />
+    <Content Include="assets\img\login-cover.jpg" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\profile-cover.jpg" />
+    <Content Include="assets\img\progressbar.gif" />
+    <Content Include="assets\img\suggelogo.png" />
+    <Content Include="assets\img\svg\loading-balls.svg" />
+    <Content Include="assets\img\svg\loading-bars.svg" />
+    <Content Include="assets\img\svg\loading-bubbles.svg" />
+    <Content Include="assets\img\svg\loading-cubes.svg" />
+    <Content Include="assets\img\svg\loading-cylon.svg" />
+    <Content Include="assets\img\svg\loading-spin.svg" />
+    <Content Include="assets\img\svg\loading-spinning-bubbles.svg" />
+    <Content Include="assets\img\svg\loading-spokes.svg" />
+    <Content Include="assets\img\svg\_notes\dwsync.xml" />
+    <Content Include="assets\img\video.jpg" />
+    <Content Include="assets\img\_notes\dwsync.xml" />
+    <Content Include="assets\js\app.js" />
+    <Content Include="assets\js\bootstrap\bootstrap.js" />
+    <Content Include="assets\js\bootstrap\_notes\dwsync.xml" />
+    <Content Include="assets\js\jquery.sprFlat.js" />
+    <Content Include="assets\js\jRespond.min.js" />
+    <Content Include="assets\js\libs\jquery-2.1.1.min.js" />
+    <Content Include="assets\js\libs\jquery-ui-1.10.4.min.js" />
+    <Content Include="assets\js\pages\blank.js" />
+    <Content Include="assets\js\pages\buttons.js" />
+    <Content Include="assets\js\pages\calendar.js" />
+    <Content Include="assets\js\pages\charts.js" />
+    <Content Include="assets\js\pages\dashboard.js" />
+    <Content Include="assets\js\pages\data-tables.js" />
+    <Content Include="assets\js\pages\elements.js" />
+    <Content Include="assets\js\pages\email.js" />
+    <Content Include="assets\js\pages\file.js" />
+    <Content Include="assets\js\pages\form-validation.js" />
+    <Content Include="assets\js\pages\forms.js" />
+    <Content Include="assets\js\pages\gallery.js" />
+    <Content Include="assets\js\pages\icons.js" />
+    <Content Include="assets\js\pages\login.js" />
+    <Content Include="assets\js\pages\maps-google.js" />
+    <Content Include="assets\js\pages\maps-vector.js" />
+    <Content Include="assets\js\pages\notifications.js" />
+    <Content Include="assets\js\pages\pace.min.js" />
+    <Content Include="assets\js\pages\panels.js" />
+    <Content Include="assets\js\pages\tables.js" />
+    <Content Include="assets\js\pages\widgets.js" />
+    <Content Include="assets\js\pages\wizard.js" />
+    <Content Include="assets\js\pages\wysiwyg.js" />
+    <Content Include="assets\js\pages\_notes\dwsync.xml" />
+    <Content Include="assets\js\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\charts\pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="assets\plugins\charts\pie-chart\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\charts\sparklines\jquery.sparkline.js" />
+    <Content Include="assets\plugins\charts\sparklines\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\core\moment\moment.min.js" />
+    <Content Include="assets\plugins\core\moment\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\core\pace\pace.min.js" />
+    <Content Include="assets\plugins\core\pace\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\core\quicksearch\jquery.quicksearch.js" />
+    <Content Include="assets\plugins\core\quicksearch\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\core\slimscroll\jquery.slimscroll.horizontal.min.js" />
+    <Content Include="assets\plugins\core\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="assets\plugins\core\slimscroll\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\file\canvas-to-blob.min.js" />
+    <Content Include="assets\plugins\file\jquery.blueimp-gallery.min.js" />
+    <Content Include="assets\plugins\file\jquery.fileupload-audio.js" />
+    <Content Include="assets\plugins\file\jquery.fileupload-image.js" />
+    <Content Include="assets\plugins\file\jquery.fileupload-process.js" />
+    <Content Include="assets\plugins\file\jquery.fileupload-ui.js" />
+    <Content Include="assets\plugins\file\jquery.fileupload-validate.js" />
+    <Content Include="assets\plugins\file\jquery.fileupload-video.js" />
+    <Content Include="assets\plugins\file\jquery.fileupload.js" />
+    <Content Include="assets\plugins\file\jquery.iframe-transport.js" />
+    <Content Include="assets\plugins\file\jquery.ui.widget.js" />
+    <Content Include="assets\plugins\file\load-image.min.js" />
+    <Content Include="assets\plugins\file\tmpl.min.js" />
+    <Content Include="assets\plugins\file\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\forms\autosize\jquery.autosize.js" />
+    <Content Include="assets\plugins\forms\autosize\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\forms\icheck\jquery.icheck.js" />
+    <Content Include="assets\plugins\forms\icheck\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\forms\select2\select2.png" />
+    <Content Include="assets\plugins\forms\select2\select2x2.png" />
+    <Content Include="assets\plugins\forms\select2\spinner.gif" />
+    <Content Include="assets\plugins\forms\select2\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\forms\tags\jquery.tagsinput.min.js" />
+    <Content Include="assets\plugins\forms\tags\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\forms\tinymce\tinymce.min.js" />
+    <Content Include="assets\plugins\forms\tinymce\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\forms\validation\additional-methods.min.js" />
+    <Content Include="assets\plugins\forms\validation\jquery.validate.js" />
+    <Content Include="assets\plugins\forms\validation\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\misc\countTo\jquery.countTo.js" />
+    <Content Include="assets\plugins\misc\countTo\_notes\dwsync.xml" />
+    <Content Include="assets\plugins\misc\highlight\highlight.pack.js" />
+    <Content Include="assets\plugins\misc\highlight\_notes\dwsync.xml" />
     <Content Include="cssfichacliente\style.css" />
     <Content Include="css\app.css" />
     <Content Include="css\bootstrap\bootstrap-responsive.css" />
@@ -724,12 +909,11 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Default.aspx" />
-    <Content Include="RecuperacaoConta.aspx" />
     <Content Include="VerificacaoConta.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="EMAIL.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="ErrorLog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -923,6 +1107,7 @@
     <Compile Include="Home\EliminarUtilizador.aspx.designer.cs">
       <DependentUpon>EliminarUtilizador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home\EMAIL.cs" />
     <Compile Include="Home\FecharOrdemReparacao.aspx.cs">
       <DependentUpon>FecharOrdemReparacao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1463,13 +1648,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="RecuperacaoConta.aspx.cs">
-      <DependentUpon>RecuperacaoConta.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RecuperacaoConta.aspx.designer.cs">
-      <DependentUpon>RecuperacaoConta.aspx</DependentUpon>
-    </Compile>
     <Compile Include="SQLLog.cs" />
     <Compile Include="VerificacaoConta.aspx.cs">
       <DependentUpon>VerificacaoConta.aspx</DependentUpon>
@@ -1502,6 +1680,48 @@
     <Content Include="images\ico\user%29\Descr.WD3" />
     <Content Include="images\ico\%24xd\Descr.WD3" />
     <Content Include="images\ico\embed\Descr.WD3" />
+    <Content Include="assets\css\sprflat-theme\Descr.WD3" />
+    <Content Include="assets\css\sprflat-theme\images\Descr.WD3" />
+    <Content Include="assets\fonts\brocolidry.eot" />
+    <Content Include="assets\fonts\brocolidry.eot%40" />
+    <Content Include="assets\fonts\brocolidry.ttf" />
+    <Content Include="assets\fonts\brocolidry.woff" />
+    <Content Include="assets\fonts\Descr.WD3" />
+    <Content Include="assets\fonts\ecoico.eot" />
+    <Content Include="assets\fonts\ecoico.eot%40" />
+    <Content Include="assets\fonts\ecoico.ttf" />
+    <Content Include="assets\fonts\ecoico.woff" />
+    <Content Include="assets\fonts\entypo.eot" />
+    <Content Include="assets\fonts\entypo.eot%40" />
+    <Content Include="assets\fonts\entypo.ttf" />
+    <Content Include="assets\fonts\entypo.woff" />
+    <Content Include="assets\fonts\fontawesome.eot" />
+    <Content Include="assets\fonts\fontawesome.eot%40" />
+    <Content Include="assets\fonts\fontawesome.ttf" />
+    <Content Include="assets\fonts\fontawesome.woff" />
+    <Content Include="assets\fonts\icomoon.eot" />
+    <Content Include="assets\fonts\icomoon.eot%40" />
+    <Content Include="assets\fonts\icomoon.ttf" />
+    <Content Include="assets\fonts\icomoon.woff" />
+    <Content Include="assets\fonts\meteo.eot" />
+    <Content Include="assets\fonts\meteo.eot%40" />
+    <Content Include="assets\fonts\meteo.ttf" />
+    <Content Include="assets\fonts\meteo.woff" />
+    <Content Include="assets\fonts\steadysets.eot" />
+    <Content Include="assets\fonts\steadysets.eot%40" />
+    <Content Include="assets\fonts\steadysets.ttf" />
+    <Content Include="assets\fonts\steadysets.woff" />
+    <Content Include="assets\fonts\vjs.eot" />
+    <Content Include="assets\fonts\vjs.eot%40" />
+    <Content Include="assets\fonts\vjs.ttf" />
+    <Content Include="assets\fonts\vjs.woff" />
+    <Content Include="assets\img\avatars\Descr.WD3" />
+    <Content Include="assets\img\blog\Descr.WD3" />
+    <Content Include="assets\img\carousel\Descr.WD3" />
+    <Content Include="assets\img\gallery\Descr.WD3" />
+    <Content Include="assets\img\ico\Descr.WD3" />
+    <Content Include="assets\img\instagram\Descr.WD3" />
+    <Content Include="assets\img\svg\Descr.WD3" />
     <None Include="Properties\PublishProfiles\DYGUS_SAT_APP.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1550,6 +1770,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties UseAjaxifiedTemplates="False" UseJQuerySupport="False" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

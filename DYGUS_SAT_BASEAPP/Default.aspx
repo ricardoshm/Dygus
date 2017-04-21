@@ -4,50 +4,103 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container-fluid">
-        <div id="login">
-            <div class="login-wrapper" data-active="log">
-                <a class="brand" href="Default.aspx">
-                    <img src="img/logo_dygus_sat.png" alt="Dygus :: SAT" /></a>
-                <div id="log">
-                    <div class="page-header">
-                        <h3 class="center">Formulário de Login</h3>
-                        <h4 class="center" id="versao" runat="server"></h4>
+    <!-- Start #login -->
+    <div id="login" class="animated bounceIn">
+        <img id="logo" src="img/logo_dygus_sat.png" alt="sprFlat Logo" />
+        <!-- Start .login-wrapper -->
+        <div class="login-wrapper">
+            <ul id="myTab" class="nav nav-tabs nav-justified bn">
+                <li><a href="#log-in" data-toggle="tab">Login</a></li>
+                <li><a href="#register" data-toggle="tab">Recuperação de conta</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content bn">
+                <div class="tab-pane fade active in" id="log-in">
+                    <div class="seperator">
+                        <strong>
+                            <label id="versao" runat="server"></label>
+                        </strong>
+                        <hr />
                     </div>
-                    <div id="login-form" class="form-horizontal">
-                        <div class="row-fluid">
-                            <div class="control-group">
-                                <div class="controls-row">
-                                    <asp:TextBox runat="server" ID="tbusername" CssClass="span12" placeholder="Nome de Utilizador (Email)"></asp:TextBox>
-                                </div>
-
-                                <div class="controls-row">
-                                    <asp:TextBox runat="server" ID="tbpassword" TextMode="Password" placeholder="Palavra-Passe" CssClass="span12"></asp:TextBox>
-                                </div>
-                            </div>
-                            <!-- End .control-group -->
-                            <div class="form-actions full">
-                                <%--<label class="checkbox pull-left">
-                                    <input type="checkbox" value="1" name="remember">
-                                    <span class="pad-left5">Remember me ?</span>
-                                </label>--%>
-                                <label id="erro" runat="server" style="color: red; text-align: justify;" visible="false" class="span12"></label>
-                                <asp:Button runat="server" ID="btnLogin" OnClick="btnLogin_Click" Text="Entrar" CssClass="btn btn-primary btn-large pull-right span5" />
-
-
+                    <div class="form-horizontal mt10" id="login-form" role="form">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <asp:TextBox runat="server" ID="tbusername" CssClass="form-control left-icon" placeholder="Nome de Utilizador (Email)"></asp:TextBox>
+                                <i class="ec-user s16 left-input-icon"></i>
                             </div>
                         </div>
-                        <!-- End .row-fluid -->
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <asp:TextBox runat="server" ID="tbpassword" TextMode="Password" placeholder="Palavra-Passe" CssClass="form-control left-icon"></asp:TextBox>
+                                <i class="ec-locked s16 left-input-icon"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <label id="erro" runat="server" style="color: red; text-align: justify;" visible="false" class="span12"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8">
+                            </div>
+                            <!-- col-lg-12 end here -->
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-4">
+                                <asp:Button runat="server" ID="btnLogin" OnClick="btnLogin_Click" Text="Entrar" CssClass="btn btn-success pull-right" />
+                            </div>
+                            <!-- col-lg-12 end here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="register">
+                    <div class="form-horizontal mt20" id="register-form" role="form">
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <!-- col-lg-12 start here -->
+                                <asp:TextBox runat="server" ID="tbUsernameRecover" CssClass="form-control left-icon" placeholder="Nome de Utilizador (Email)"></asp:TextBox>
+                                <i class="ec-mail s16 left-input-icon"></i>
+                            </div>
+                            <!-- col-lg-12 end here -->
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <label id="erroRecover" runat="server" style="color: red; text-align: justify;" visible="false" class="span12"></label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <!-- col-lg-12 start here -->
+                                <asp:Button runat="server" ID="btnRecover" OnClick="btnRecover_Click" Text="Recuperar conta" CssClass="btn btn-success pull-right" />
+                            </div>
+                            <!-- col-lg-12 end here -->
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="bar" data-active="log">
-                <div class="btn-group btn-group-vertical">
-                    <a id="A1" href="Default.aspx" class="btn tipR" title="Formulário de Login"><i class="icon16 i-key"></i></a>
-                    <a id="A3" href="RecuperacaoConta.aspx" class="btn tipR" title="Recuperação de Conta"><i class="icon16 i-question"></i></a>
-                </div>
-            </div>
-            <div class="clearfix"></div>
         </div>
+        <!-- End #.login-wrapper -->
     </div>
+    <!-- End #login -->
+    <!-- Javascripts -->
+    <!-- Load pace first -->
+    <script src="assets/plugins/core/pace/pace.min.js"></script>
+    <!-- Important javascript libs(put in all pages) -->
+    <script>window.jQuery || document.write('<script src="assets/js/libs/jquery-2.1.1.min.js">\x3C/script>')</script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')</script>
+    <!--[if lt IE 9]>
+          <script type="text/javascript" src="assets/js/libs/excanvas.min.js"></script>
+          <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+          <script type="text/javascript" src="assets/js/libs/respond.min.js"></script>
+        <![endif]-->
+    <!-- build:js assets/js/pages/login.js -->
+    <!-- Bootstrap plugins -->
+    <script src="assets/js/bootstrap/bootstrap.js"></script>
+    <!-- Form plugins -->
+    <script src="assets/plugins/forms/icheck/jquery.icheck.js"></script>
+    <script src="assets/plugins/forms/validation/jquery.validate.js"></script>
+    <script src="assets/plugins/forms/validation/additional-methods.min.js"></script>
+    <!-- Init plugins olny for this page -->
+    <script src="assets/js/pages/login.js"></script>
+    <!-- endbuild -->
+    <!-- Google Analytics:  -->
+
 </asp:Content>

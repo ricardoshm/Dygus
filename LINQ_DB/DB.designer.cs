@@ -22,7 +22,7 @@ namespace LINQ_DB
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="onoff")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dygussatdemo")]
 	public partial class DBDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,6 +33,9 @@ namespace LINQ_DB
     partial void InsertArmazem(Armazem instance);
     partial void UpdateArmazem(Armazem instance);
     partial void DeleteArmazem(Armazem instance);
+    partial void InsertVersao(Versao instance);
+    partial void UpdateVersao(Versao instance);
+    partial void DeleteVersao(Versao instance);
     partial void InsertArtigo(Artigo instance);
     partial void UpdateArtigo(Artigo instance);
     partial void DeleteArtigo(Artigo instance);
@@ -156,13 +159,10 @@ namespace LINQ_DB
     partial void InsertParceiro_Tipo(Parceiro_Tipo instance);
     partial void UpdateParceiro_Tipo(Parceiro_Tipo instance);
     partial void DeleteParceiro_Tipo(Parceiro_Tipo instance);
-    partial void InsertVersao(Versao instance);
-    partial void UpdateVersao(Versao instance);
-    partial void DeleteVersao(Versao instance);
     #endregion
 		
 		public DBDataContext() : 
-				base(global::LINQ_DB.Properties.Settings.Default.DYGUS_SAT_BASEConnectionString, mappingSource)
+				base(global::LINQ_DB.Properties.Settings.Default.dygussatdemoConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -196,6 +196,14 @@ namespace LINQ_DB
 			get
 			{
 				return this.GetTable<Armazem>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Versao> Versaos
+		{
+			get
+			{
+				return this.GetTable<Versao>();
 			}
 		}
 		
@@ -526,14 +534,6 @@ namespace LINQ_DB
 				return this.GetTable<Parceiro_Tipo>();
 			}
 		}
-		
-		public System.Data.Linq.Table<Versao> Versaos
-		{
-			get
-			{
-				return this.GetTable<Versao>();
-			}
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Armazem")]
@@ -695,6 +695,116 @@ namespace LINQ_DB
 		{
 			this.SendPropertyChanging();
 			entity.Armazem = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Versao")]
+	public partial class Versao : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _VERSAO1;
+		
+		private System.DateTime _DATA;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnVERSAO1Changing(string value);
+    partial void OnVERSAO1Changed();
+    partial void OnDATAChanging(System.DateTime value);
+    partial void OnDATAChanged();
+    #endregion
+		
+		public Versao()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="VERSAO", Storage="_VERSAO1", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string VERSAO1
+		{
+			get
+			{
+				return this._VERSAO1;
+			}
+			set
+			{
+				if ((this._VERSAO1 != value))
+				{
+					this.OnVERSAO1Changing(value);
+					this.SendPropertyChanging();
+					this._VERSAO1 = value;
+					this.SendPropertyChanged("VERSAO1");
+					this.OnVERSAO1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATA", DbType="DateTime NOT NULL")]
+		public System.DateTime DATA
+		{
+			get
+			{
+				return this._DATA;
+			}
+			set
+			{
+				if ((this._DATA != value))
+				{
+					this.OnDATAChanging(value);
+					this.SendPropertyChanging();
+					this._DATA = value;
+					this.SendPropertyChanged("DATA");
+					this.OnDATAChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -12036,116 +12146,6 @@ namespace LINQ_DB
 		{
 			this.SendPropertyChanging();
 			entity.Parceiro_Tipo = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Versao")]
-	public partial class Versao : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _VERSAO1;
-		
-		private System.DateTime _DATA;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnVERSAO1Changing(string value);
-    partial void OnVERSAO1Changed();
-    partial void OnDATAChanging(System.DateTime value);
-    partial void OnDATAChanged();
-    #endregion
-		
-		public Versao()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="VERSAO", Storage="_VERSAO1", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string VERSAO1
-		{
-			get
-			{
-				return this._VERSAO1;
-			}
-			set
-			{
-				if ((this._VERSAO1 != value))
-				{
-					this.OnVERSAO1Changing(value);
-					this.SendPropertyChanging();
-					this._VERSAO1 = value;
-					this.SendPropertyChanged("VERSAO1");
-					this.OnVERSAO1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATA", DbType="DateTime NOT NULL")]
-		public System.DateTime DATA
-		{
-			get
-			{
-				return this._DATA;
-			}
-			set
-			{
-				if ((this._DATA != value))
-				{
-					this.OnDATAChanging(value);
-					this.SendPropertyChanging();
-					this._DATA = value;
-					this.SendPropertyChanged("DATA");
-					this.OnDATAChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }

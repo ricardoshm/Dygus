@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="onoff" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=onoff.db.12092063.hostedresource.com;Initial Catalog=onoff;User ID=onoff" SettingsObjectName="LINQ_DB.Properties.Settings" SettingsPropertyName="f2tekmobiledsConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dygussatdemo" Class="DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=cp76.webserver.pt;Initial Catalog=dygussatdemo;Persist Security Info=True;User ID=dygussatdemo" SettingsObjectName="LINQ_DB.Properties.Settings" SettingsPropertyName="dygussatdemoConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Armazem" Member="Armazems">
     <Type Name="Armazem">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -7,6 +7,13 @@
       <Column Name="OBSERVACOES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="ACTIVO" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Armazem_Artigo" Member="Artigos" ThisKey="ID" OtherKey="ID_ARMAZEM" Type="Artigo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Versao" Member="Versaos">
+    <Type Name="Versao">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VERSAO" Member="VERSAO1" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DATA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Artigo" Member="Artigos">
@@ -537,13 +544,6 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="DESCRICAO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Association Name="Parceiro_Tipo_Parceiro" Member="Parceiros" ThisKey="ID" OtherKey="ID_TIPO_PARCEIRO" Type="Parceiro" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Versao" Member="Versaos">
-    <Type Name="Versao">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="VERSAO" Member="VERSAO1" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="DATA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

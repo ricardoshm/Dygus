@@ -26,10 +26,33 @@ namespace LINQ_DB.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cp76.webserver.pt; Initial Catalog=onoffmobileds; User ID=onoffmobileds; Password=Lisboa22!#;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cp76.webserver.pt; Initial Catalog=dygussatdemo; User ID=dygussatdemo" +
+            "; Password=Lisboa22!#;")]
         public string DYGUS_SAT_BASEConnectionString {
             get {
                 return ((string)(this["DYGUS_SAT_BASEConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=onoff.db.12092063.hostedresource.com;Initial Catalog=onoff;User ID=on" +
+            "off")]
+        public string f2tekmobiledsConnectionString {
+            get {
+                return ((string)(this["f2tekmobiledsConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cp76.webserver.pt;Initial Catalog=dygussatdemo;Persist Security Info=" +
+            "True;User ID=dygussatdemo;Password=Lisboa22!#")]
+        public string dygussatdemoConnectionString {
+            get {
+                return ((string)(this["dygussatdemoConnectionString"]));
             }
         }
     }

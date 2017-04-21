@@ -53,3 +53,23 @@ Log Entry :
 11/23/2016 12:46:01
 Error in: http://localhost:52747/Home/GerirORCCliente?ID=10. Error Message:The null value cannot be assigned to a member with type System.Int32 which is a non-nullable value type.
 __________________________
+
+Log Entry : 
+03/21/2017 09:34:30
+Error in: http://localhost:52747/Default. Error Message:Object reference not set to an instance of an object.
+__________________________
+
+Log Entry : 
+03/21/2017 09:35:02
+Error in: http://localhost:52747/Default. Error Message:Object reference not set to an instance of an object.
+__________________________
+
+Log Entry : 
+03/21/2017 09:35:11
+Error in: http://localhost:52747/Default. Error Message:Object reference not set to an instance of an object.
+__________________________
+
+Log Entry : 
+03/21/2017 09:35:14
+Error in: http://localhost:52747/Default. Error Message:Object reference not set to an instance of an object.
+__________________________

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -14,6 +15,7 @@ namespace DYGUS_SAT_BASEAPP
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+        public Email emailConfig = new Email();
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -69,6 +71,10 @@ namespace DYGUS_SAT_BASEAPP
         protected void Page_Load(object sender, EventArgs e)
         {
             Log.InitializeLog();
+            //emailConfig.EMAILALIAS = ConfigurationManager.AppSettings["EmailAlias"].ToString();
+            //emailConfig.SENDEREMAIL = ConfigurationManager.AppSettings["EmailSender"].ToString();
+            //emailConfig.EMAILSSL = Convert.ToBoolean(ConfigurationManager.AppSettings["EmailSSL"]);
+            //emailConfig.EMAILHOST = ConfigurationManager.AppSettings["EmailHost"].ToString();
         }
     }
 }
