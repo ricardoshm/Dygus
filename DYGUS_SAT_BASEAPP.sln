@@ -31,21 +31,6 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs41
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = DYGUS_SAT_BASEAPP\\DYGUS_SAT_BASEAPP.csproj
-		SccProjectName1 = DYGUS_SAT_BASEAPP
-		SccLocalPath1 = DYGUS_SAT_BASEAPP
-		SccProjectUniqueName2 = EmailService\\EmailService.csproj
-		SccProjectName2 = EmailService
-		SccLocalPath2 = EmailService
-		SccProjectUniqueName3 = LINQ_DB\\LINQ_DB.csproj
-		SccProjectName3 = LINQ_DB
-		SccLocalPath3 = LINQ_DB
-	EndGlobalSection
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
 		Manager = AnkhSVN - Subversion Support for Visual Studio
