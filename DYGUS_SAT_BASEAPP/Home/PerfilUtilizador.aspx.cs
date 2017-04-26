@@ -11,12 +11,12 @@ namespace DYGUS_SAT_BASEAPP.Home
     public partial class PerfilUtilizador : Telerik.Web.UI.RadAjaxPage
     {
         LINQ_DB.DBDataContext DC = new LINQ_DB.DBDataContext();
-Guid userid = new Guid();
+        Guid userid = new Guid();
         protected void Page_Load(object sender, EventArgs e)
         {
             System.Security.Principal.IPrincipal User = HttpContext.Current.User;
 
-            
+
             string UserName = "";
             if (User.Identity.IsAuthenticated == true)
             {
@@ -64,7 +64,8 @@ Guid userid = new Guid();
                     }
                     catch (Exception ex)
                     {
-                        ErrorLog.WriteError(ex.Message);Response.Redirect("ErrorPage.aspx?erro=" + ex.Message, false);
+                        ErrorLog.WriteError(ex.Message);
+                        Response.Redirect("ErrorPage.aspx?erro=" + ex.Message, false);
                     }
                 }
 
@@ -88,13 +89,15 @@ Guid userid = new Guid();
                     {
                         try
                         {
-                            AlterarPassword();
+                            AlterarPassword(tbnovapass.Text);
                             DC.SubmitChanges();
                             SQLLog.registaLogBD(userid, DateTime.Now, "Perfil de Utilizador", "Alterada a password de utilizador", true);
+                            Log.Info(String.Format("Alterada a password de utilizador: {0}", userid.ToString()));
                         }
                         catch (Exception ex)
                         {
-                            ErrorLog.WriteError(ex.Message);Response.Redirect("ErrorPage.aspx?erro=" + ex.Message, false);
+                            ErrorLog.WriteError(ex.Message);
+                            Response.Redirect("ErrorPage.aspx?erro=" + ex.Message, false);
                         }
 
                         sucesso.Visible = sucessoMessage.Visible = true;
@@ -126,56 +129,51 @@ Guid userid = new Guid();
             }
         }
 
-        private void AlterarPassword()
+        private void AlterarPassword(string novaPass)
         {
             try
             {
-                if (tbnovapass.Text == tbconfirmanovapass.Text)
+                string username = "";
+                string pass = "";
+
+
+                var userResults = from u in DC.aspnet_Memberships
+                                  where u.Email == User.Identity.Name
+                                  select u;
+                foreach (var item in userResults)
+                {
+                    username = item.aspnet_User.UserName;
+                    pass = item.Password;
+                }
+
+                string hashedpass = pass;
+
+                string strUserInputtedHashedPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(tbpassantiga.Text, "sha1");
+                if (strUserInputtedHashedPassword == hashedpass)
                 {
 
-                    string username = "";
-                    string pass = "";
+                    string password = "";
+                    password = novaPass;
 
+                    string passwordencriptada = "";
 
-                    var userResults = from u in DC.aspnet_Memberships
-                                      where u.Email == User.Identity.Name
-                                      select u;
-                    foreach (var item in userResults)
-                    {
-                        username = item.aspnet_User.UserName;
-                        pass = item.Password;
-                    }
+                    passwordencriptada = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "sha1");
 
-                    string hashedpass = pass;
+                    LINQ_DB.aspnet_Membership aspm = new LINQ_DB.aspnet_Membership();
 
-                    string strUserInputtedHashedPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(tbpassantiga.Text, "sha1");
-                    if (strUserInputtedHashedPassword == hashedpass)
-                    {
-
-                        string password = "";
-                        password = tbnovapass.Text;
-
-                        string passwordencriptada = "";
-
-                        passwordencriptada = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "sha1");
-
-                        LINQ_DB.aspnet_Membership aspm = new LINQ_DB.aspnet_Membership();
-
-                        aspm = userResults.First();
-                        aspm.Password = passwordencriptada;
-                        aspm.LastPasswordChangedDate = DateTime.Now;
-                        DC.SubmitChanges();
-                    }
-
+                    aspm = userResults.First();
+                    aspm.Password = passwordencriptada;
+                    aspm.LastPasswordChangedDate = DateTime.Now;
+                    DC.SubmitChanges();
                 }
-                else
-                {
 
-                }
+
             }
             catch (Exception ex)
             {
-                ErrorLog.WriteError(ex.Message);Response.Redirect("ErrorPage.aspx?erro=" + ex.Message, false);
+                ErrorLog.WriteError(ex.Message);
+                Log.ErrorException(ex);
+                Response.Redirect("ErrorPage.aspx?erro=" + ex.Message, false);
             }
 
 
@@ -246,7 +244,9 @@ Guid userid = new Guid();
             }
             catch (Exception ex)
             {
-                ErrorLog.WriteError(ex.Message);Response.Redirect("ErrorPage.aspx?erro=" + ex.Message, false);
+                ErrorLog.WriteError(ex.Message);
+                Log.ErrorException(ex);
+                Response.Redirect("ErrorPage.aspx?erro=" + ex.Message, false);
             }
 
             return resultadofinal;

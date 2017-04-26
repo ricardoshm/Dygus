@@ -4,3 +4,9 @@ C:\Users\Ricardo Martins\Source\Repos\Dygus\LINQ_DB\bin\Debug\LINQ_DB.pdb
 C:\Users\Ricardo Martins\Source\Repos\Dygus\LINQ_DB\obj\Debug\LINQ_DB.csprojResolveAssemblyReference.cache
 C:\Users\Ricardo Martins\Source\Repos\Dygus\LINQ_DB\obj\Debug\LINQ_DB.dll
 C:\Users\Ricardo Martins\Source\Repos\Dygus\LINQ_DB\obj\Debug\LINQ_DB.pdb
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\LINQ_DB\bin\Debug\LINQ_DB.dll.config
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\LINQ_DB\bin\Debug\LINQ_DB.dll
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\LINQ_DB\bin\Debug\LINQ_DB.pdb
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\LINQ_DB\obj\Debug\LINQ_DB.csprojResolveAssemblyReference.cache
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\LINQ_DB\obj\Debug\LINQ_DB.dll
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\LINQ_DB\obj\Debug\LINQ_DB.pdb

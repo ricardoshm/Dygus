@@ -14,5 +14,11 @@
     <Setting Name="EmailAlias" Type="System.String" Scope="Application">
       <Value Profile="(Default)">DYGUS - Assistência Técnica</Value>
     </Setting>
+    <Setting Name="EmailUsername" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EmailPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

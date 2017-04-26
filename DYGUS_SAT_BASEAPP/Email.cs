@@ -55,7 +55,7 @@ namespace DYGUS_SAT_BASEAPP
                 emailalias = value;
             }
         }
-        private string emailPassword = "Dygus22!#";
+        private string emailPassword = "Dygus2017!#";
         public string EMAILPASS
         {
             get

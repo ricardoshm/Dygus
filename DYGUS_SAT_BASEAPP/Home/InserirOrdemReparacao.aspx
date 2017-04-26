@@ -87,13 +87,13 @@
                             <div class="control-group">
                                 <label class="control-label" for="normal">Pesquisar Contacto Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadMaskedTextBox Mask="###-###-###" Width="285" Skin="MetroTouch" runat="server" ID="tbPesquisaContactoCliente" placeholder="Telefone" MaxLength="9" CssClass="span12" AutoPostBack="true" OnTextChanged="tbPesquisaContactoCliente_TextChanged"></telerik:RadMaskedTextBox>
+                                    <telerik:RadMaskedTextBox Mask="###-###-###" Width="285" Skin="MetroTouch" runat="server" ID="tbPesquisaContactoCliente" placeholder="Telefone" MaxLength="9" CssClass="form-control" AutoPostBack="true" OnTextChanged="tbPesquisaContactoCliente_TextChanged"></telerik:RadMaskedTextBox>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="normal">Pesquisar Nome Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbPesquisaNomeCliente" placeholder="Nome" CssClass="span12" AutoPostBack="true" OnTextChanged="tbPesquisaNomeCliente_TextChanged"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbPesquisaNomeCliente" placeholder="Nome" CssClass="form-control" AutoPostBack="true" OnTextChanged="tbPesquisaNomeCliente_TextChanged"></telerik:RadTextBox>
                                 </div>
                             </div>
                             <div class="control-group">
@@ -225,63 +225,63 @@
                                 <asp:HiddenField runat="server" ID="codClienteExistente" />
                                 <label class="control-label" for="normal">Código do Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox DisabledStyle-ForeColor="Green" Width="285" DisabledStyle-Font-Bold="true" Skin="MetroTouch" runat="server" Font-Bold="true" ForeColor="Green" ID="tbcodcliente" CssClass="span12" ReadOnly="true" placeholder="Código de Cliente"></telerik:RadTextBox>
+                                    <telerik:RadTextBox DisabledStyle-ForeColor="Green" Width="285" DisabledStyle-Font-Bold="true" Skin="MetroTouch" runat="server" Font-Bold="true" ForeColor="Green" ID="tbcodcliente" CssClass="form-control" ReadOnly="true" placeholder="Código de Cliente"></telerik:RadTextBox>
                                 </div>
                             </div>
                             <div class="control-group" id="tipocliente" runat="server">
                                 <label class="control-label" for="normal">Tipo do Cliente</label>
                                 <div class="controls controls-row">
-                                    <%--<telerik:RadComboBox EnableLoadOnDemand="true" ID="ddltipoCliente" Width="285px" runat="server" CssClass="span12" Skin="MetroTouch" AutoPostBack="false" />--%>
-                                    <asp:RadioButtonList Width="300px" runat="server" ID="rbTipoCliente" RepeatDirection="Horizontal" Style="display: inline" CssClass="span12"></asp:RadioButtonList>
+                                    <%--<telerik:RadComboBox EnableLoadOnDemand="true" ID="ddltipoCliente" Width="285px" runat="server" CssClass="form-control" Skin="MetroTouch" AutoPostBack="false" />--%>
+                                    <asp:RadioButtonList Width="300px" runat="server" ID="rbTipoCliente" RepeatDirection="Horizontal" Style="display: inline" CssClass="form-control"></asp:RadioButtonList>
                                 </div>
                             </div>
 
                             <div class="control-group">
                                 <label class="control-label" for="normal">Nome do Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbnome" placeholder="Nome Completo" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbnome" placeholder="Nome Completo" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
                             <div class="control-group" style="display: none">
                                 <label class="control-label" for="normal">Morada do Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbmorada" TextMode="MultiLine" placeholder="Morada" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbmorada" TextMode="MultiLine" placeholder="Morada" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
                             <div class="control-group" style="display: none">
                                 <label class="control-label" for="normal">Código Postal do Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadMaskedTextBox Mask="####-###" Width="285" Skin="MetroTouch" runat="server" ID="tbcodpostal" placeholder="Código Postal" MaxLength="8" CssClass="span12"></telerik:RadMaskedTextBox>
+                                    <telerik:RadMaskedTextBox Mask="####-###" Width="285" Skin="MetroTouch" runat="server" ID="tbcodpostal" placeholder="Código Postal" MaxLength="8" CssClass="form-control"></telerik:RadMaskedTextBox>
                                 </div>
                             </div>
                             <div class="control-group" style="display: none">
                                 <label class="control-label" for="normal">Localidade do Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tblocalidade" placeholder="Localidade" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tblocalidade" placeholder="Localidade" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="normal">Telefone do Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadMaskedTextBox Mask="###-###-###" Width="285" Skin="MetroTouch" runat="server" ID="tbcontacto" placeholder="Telefone" MaxLength="9" CssClass="span12" OnTextChanged="tbcontacto_TextChanged"></telerik:RadMaskedTextBox>
+                                    <telerik:RadMaskedTextBox Mask="###-###-###" Width="285" Skin="MetroTouch" runat="server" ID="tbcontacto" placeholder="Telefone" MaxLength="9" CssClass="form-control" OnTextChanged="tbcontacto_TextChanged"></telerik:RadMaskedTextBox>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="normal">Email do Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbemail" placeholder="Email" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbemail" placeholder="Email" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="normal">NIF do Cliente</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadMaskedTextBox Mask="#########" Width="285" Skin="MetroTouch" runat="server" ID="tbnif" placeholder="NIF" MaxLength="9" CssClass="span12"></telerik:RadMaskedTextBox>
+                                    <telerik:RadMaskedTextBox Mask="#########" Width="285" Skin="MetroTouch" runat="server" ID="tbnif" placeholder="NIF" MaxLength="9" CssClass="form-control"></telerik:RadMaskedTextBox>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="normal">Observações</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbobs" TextMode="MultiLine" placeholder="Observações" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbobs" TextMode="MultiLine" placeholder="Observações" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
                         </div>
@@ -317,21 +317,21 @@
                             <div class="control-group">
                                 <label class="control-label" for="normal">IMEI</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbimei" placeholder="IMEI" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tbimei" placeholder="IMEI" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
 
                             <div class="control-group">
                                 <label class="control-label" for="normal">Código de Segurança</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Skin="MetroTouch" Width="285" runat="server" ID="tbcodseguranca" placeholder="Código de Segurança" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Skin="MetroTouch" Width="285" runat="server" ID="tbcodseguranca" placeholder="Código de Segurança" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
 
                             <div class="control-group">
                                 <label class="control-label" for="normal">Descrição Detalhada da Avaria</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox TextMode="MultiLine" Width="285" Skin="MetroTouch" runat="server" Height="85" ID="tbdescricaoProblemaEquipAvariado" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox TextMode="MultiLine" Width="285" Skin="MetroTouch" runat="server" Height="85" ID="tbdescricaoProblemaEquipAvariado" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
 
@@ -351,19 +351,19 @@
                             <div class="control-group">
                                 <label class="control-label" for="normal">Tipo de Reparação</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadComboBox ID="ddltipoReparacao" Width="285px" runat="server" CssClass="span12" Skin="MetroTouch"></telerik:RadComboBox>
+                                    <telerik:RadComboBox ID="ddltipoReparacao" Width="285px" runat="server" CssClass="form-control" Skin="MetroTouch"></telerik:RadComboBox>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="normal">Valor Previsto de Reparação</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadNumericTextBox Culture="pt-PT" Type="Currency" NumberFormat-DecimalDigits="0" ID="tbvalorprevistorep" Width="285px" runat="server" CssClass="span12" Skin="MetroTouch"></telerik:RadNumericTextBox>
+                                    <telerik:RadNumericTextBox Culture="pt-PT" Type="Currency" NumberFormat-DecimalDigits="0" ID="tbvalorprevistorep" Width="285px" runat="server" CssClass="form-control" Skin="MetroTouch"></telerik:RadNumericTextBox>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="normal">Observações</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbObsNovoEquipAvariado" TextMode="MultiLine" placeholder="Observações" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbObsNovoEquipAvariado" TextMode="MultiLine" placeholder="Observações" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
 
@@ -473,14 +473,14 @@
                             <div class="control-group">
                                 <label class="control-label" for="normal">Outros</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tboutrosequipavariado" TextMode="MultiLine" placeholder="Outros" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tboutrosequipavariado" TextMode="MultiLine" placeholder="Outros" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
 
                             <div class="control-group">
                                 <label class="control-label" for="normal">Observações</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbobsequipavariado" TextMode="MultiLine" placeholder="Observações" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbobsequipavariado" TextMode="MultiLine" placeholder="Observações" CssClass="form-control"></telerik:RadTextBox>
 
                                 </div>
                             </div>
@@ -507,14 +507,14 @@
                             <div class="control-group">
                                 <label class="control-label" for="normal">Operadora</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tboperadora" placeholder="Nome da Operadora" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" runat="server" ID="tboperadora" placeholder="Nome da Operadora" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
 
                             <div class="control-group">
                                 <label class="control-label" for="normal">Observações</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbobsEstadoEquipamento" TextMode="MultiLine" placeholder="Observações" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbobsEstadoEquipamento" TextMode="MultiLine" placeholder="Observações" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
 
@@ -602,7 +602,7 @@
                             <div class="control-group">
                                 <label class="control-label" for="normal">Observações</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbObsTrabalhosRealizar" TextMode="MultiLine" placeholder="Observações" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbObsTrabalhosRealizar" TextMode="MultiLine" placeholder="Observações" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
 
@@ -630,14 +630,14 @@
                             <div class="control-group">
                                 <label class="control-label" for="normal">Tipo de Garantia</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadComboBox ID="ddltipogarantia" Width="285px" runat="server" CssClass="span12" Skin="MetroTouch" />
+                                    <telerik:RadComboBox ID="ddltipogarantia" Width="285px" runat="server" CssClass="form-control" Skin="MetroTouch" />
                                 </div>
                             </div>
 
                             <div class="control-group">
                                 <label class="control-label" for="normal">Observações</label>
                                 <div class="controls controls-row">
-                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbobsGarantiaequipavariado" TextMode="MultiLine" placeholder="Observações" CssClass="span12"></telerik:RadTextBox>
+                                    <telerik:RadTextBox Width="285" Skin="MetroTouch" Height="85" runat="server" ID="tbobsGarantiaequipavariado" TextMode="MultiLine" placeholder="Observações" CssClass="form-control"></telerik:RadTextBox>
                                 </div>
                             </div>
 
@@ -736,9 +736,9 @@
                             <div class="control-group" id="divLoja" runat="server">
                                 <label class="control-label" for="normal">Loja</label>
                                 <div class="controls controls-row">
-                                    <%--<telerik:RadComboBox EnableLoadOnDemand="true" ID="ddlLoja" Width="285px" runat="server" CssClass="span12" Skin="MetroTouch" AutoPostBack="true" OnSelectedIndexChanged="ddlLoja_SelectedIndexChanged" />--%>
+                                    <%--<telerik:RadComboBox EnableLoadOnDemand="true" ID="ddlLoja" Width="285px" runat="server" CssClass="form-control" Skin="MetroTouch" AutoPostBack="true" OnSelectedIndexChanged="ddlLoja_SelectedIndexChanged" />--%>
                                     <asp:HiddenField ID="idMinhaLoja" runat="server" />
-                                    <asp:RadioButtonList Width="400px" runat="server" ID="rbLojas" RepeatDirection="Horizontal" Style="display: inline" CssClass="span12"></asp:RadioButtonList>
+                                    <asp:RadioButtonList Width="400px" runat="server" ID="rbLojas" RepeatDirection="Horizontal" Style="display: inline" CssClass="form-control"></asp:RadioButtonList>
                                 </div>
                             </div>
                             <br />

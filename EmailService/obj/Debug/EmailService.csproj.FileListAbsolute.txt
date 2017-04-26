@@ -4,3 +4,9 @@ C:\Users\Ricardo Martins\Source\Repos\Dygus\EmailService\bin\Debug\EmailService.
 C:\Users\Ricardo Martins\Source\Repos\Dygus\EmailService\obj\Debug\EmailService.csprojResolveAssemblyReference.cache
 C:\Users\Ricardo Martins\Source\Repos\Dygus\EmailService\obj\Debug\EmailService.dll
 C:\Users\Ricardo Martins\Source\Repos\Dygus\EmailService\obj\Debug\EmailService.pdb
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\EmailService\bin\Debug\EmailService.dll.config
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\EmailService\bin\Debug\EmailService.dll
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\EmailService\bin\Debug\EmailService.pdb
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\EmailService\obj\Debug\EmailService.csprojResolveAssemblyReference.cache
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\EmailService\obj\Debug\EmailService.dll
+D:\$_P.PERSONAL\D.DYGUS\GIT\Dygus\EmailService\obj\Debug\EmailService.pdb

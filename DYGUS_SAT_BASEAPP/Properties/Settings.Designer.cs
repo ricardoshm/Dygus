@@ -58,5 +58,23 @@ namespace DYGUS_SAT_BASEAPP.Properties {
                 return ((string)(this["EmailAlias"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EmailUsername {
+            get {
+                return ((string)(this["EmailUsername"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int EmailPort {
+            get {
+                return ((int)(this["EmailPort"]));
+            }
+        }
     }
 }

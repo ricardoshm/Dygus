@@ -27,7 +27,7 @@ namespace LINQ_DB.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cp76.webserver.pt; Initial Catalog=dygussatdemo; User ID=dygussatdemo" +
-            "; Password=Lisboa22!#;")]
+            "; Password=Dygus2017!#;")]
         public string DYGUS_SAT_BASEConnectionString {
             get {
                 return ((string)(this["DYGUS_SAT_BASEConnectionString"]));
@@ -49,7 +49,7 @@ namespace LINQ_DB.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=cp76.webserver.pt;Initial Catalog=dygussatdemo;Persist Security Info=" +
-            "True;User ID=dygussatdemo;Password=Lisboa22!#")]
+            "True;User ID=dygussatdemo;Password=Dygus2017!#")]
         public string dygussatdemoConnectionString {
             get {
                 return ((string)(this["dygussatdemoConnectionString"]));

@@ -430,7 +430,7 @@ namespace DYGUS_SAT_BASEAPP.Home
             client.EnableSsl = false;
             client.Host = "smtpout.europe.secureserver.net";
 
-            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("dygussat@dygus.com", "Lisboa22!#");
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("dygussat@dygus.com", "Dygus2017!#");
             client.UseDefaultCredentials = false;
             client.Credentials = credentials;
 
@@ -485,7 +485,7 @@ namespace DYGUS_SAT_BASEAPP.Home
             client.EnableSsl = false;
             client.Host = "smtpout.europe.secureserver.net";
 
-            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("dygussat@dygus.com", "Lisboa22!#");
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("dygussat@dygus.com", "Dygus2017!#");
             client.UseDefaultCredentials = false;
             client.Credentials = credentials;
 
@@ -727,7 +727,7 @@ namespace DYGUS_SAT_BASEAPP.Home
             client.EnableSsl = false;
             client.Host = "smtpout.europe.secureserver.net";
 
-            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("dygussat@dygus.com", "Lisboa22!#");
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("dygussat@dygus.com", "Dygus2017!#");
             client.UseDefaultCredentials = false;
             client.Credentials = credentials;
 

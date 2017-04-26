@@ -165,7 +165,12 @@
                     </div>
                     <!-- End .widget-title -->
                     <div class="widget-content center">
-                        <telerik:RadGrid Culture="pt-PT" ClientSettings-AllowColumnsReorder="true" runat="server" ID="listaOrsTecnicos" OnNeedDataSource="listaOrsTecnicos_NeedDataSource" OnItemDataBound="listaOrsTecnicos_ItemDataBound" Skin="MetroTouch" AllowPaging="True" AllowSorting="True" CellSpacing="0" GridLines="None" AllowFilteringByColumn="True">
+
+                        <asp:ImageButton ID="btnExportExcel" runat="server" Width="30px" Height="30px" ImageUrl="~/assets/img/Excel-icon.png"
+                            OnClick="btnExportExcel_Click" AlternateText="Xlsx" />
+                    </div>
+                    <div class="widget-content center">
+                        <telerik:RadGrid Culture="pt-PT" OnItemCommand="listaOrsTecnicos_ItemCommand" ClientSettings-AllowColumnsReorder="true" runat="server" ID="listaOrsTecnicos" OnNeedDataSource="listaOrsTecnicos_NeedDataSource" OnItemDataBound="listaOrsTecnicos_ItemDataBound" Skin="MetroTouch" AllowPaging="True" AllowSorting="True" CellSpacing="0" GridLines="None" AllowFilteringByColumn="True">
                             <ClientSettings>
                                 <Scrolling AllowScroll="True" UseStaticHeaders="True"></Scrolling>
                             </ClientSettings>
@@ -463,7 +468,7 @@
         <!-- End .row -->
         <div class="row">
             <!-- Start .row -->
-            
+
             <!-- End col-lg-6 -->
             <div class="col-lg-6 col-md-6">
                 <!-- Start col-lg-6 -->

@@ -157,6 +157,15 @@ namespace DYGUS_SAT_BASEAPP.Home {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ortecnicos;
         
         /// <summary>
+        /// btnExportExcel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnExportExcel;
+        
+        /// <summary>
         /// listaOrsTecnicos control.
         /// </summary>
         /// <remarks>

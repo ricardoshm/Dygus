@@ -693,5 +693,28 @@ namespace DYGUS_SAT_BASEAPP.Home
                 hLink.NavigateUrl = "GerirMeuORC.aspx?ID=" + val1 + "&userid=" + val2;
             }
         }
+
+        protected void btnExportExcel_Click(object sender, ImageClickEventArgs e)
+        {
+            string alternateText = (sender as ImageButton).AlternateText;
+
+
+            listaOrsTecnicos.ExportSettings.Excel.Format = (GridExcelExportFormat)Enum.Parse(typeof(GridExcelExportFormat), alternateText);
+            listaOrsTecnicos.ExportSettings.IgnorePaging = false;
+            listaOrsTecnicos.ExportSettings.ExportOnlyData = true;
+            listaOrsTecnicos.ExportSettings.OpenInNewWindow = true;
+            listaOrsTecnicos.MasterTableView.ExportToExcel();
+        }
+
+        protected void listaOrsTecnicos_ItemCommand(object sender, GridCommandEventArgs e)
+        {
+            if (e.CommandName == RadGrid.ExportToExcelCommandName)
+            {
+                listaOrsTecnicos.ExportSettings.Excel.Format = GridExcelExportFormat.Xlsx;
+                listaOrsTecnicos.ExportSettings.IgnorePaging = false;
+                listaOrsTecnicos.ExportSettings.ExportOnlyData = true;
+                listaOrsTecnicos.ExportSettings.OpenInNewWindow = true;
+            }
+        }
     }
 }
